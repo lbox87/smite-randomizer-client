@@ -1,0 +1,12 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: JPNDIydboH5olcHTdMlMmbNhTYGdihqzyOg9SrxvZDFOXraxltdb5Hv0QXTmAmV9wYPilvsWU6QSegYn1JyGnNhoT+FIo1+b/UoOmOc58SWPXki2wTj+YZ4G9afnBlysba8XovVgsYKBMF/8XDZxRT0NYLL5THu4QHEmhf/XS/lPueZyFsjmPoNVyac+mHuJf81z5EjtPhvb4NshGDhNeQ7g7J9Ac4srSrtft7ppEoI4147bHVWbu3QCo8WREHfkJQpMAd/UosdeKpArvCWxPTbJSOJctUiWUvXDHwLFdRNwKDZjctU0IpJ3R+AdVsQzSSV8S+Lf2SsnTCIEMFnGE822XdnR7q7WNFSBlS2dYKUgWGdOuLA5p7QjD5NjxudUY2G4WmI2AN9m+iFVviZ11dJKI2FG17AFlYY3N64QkQlk2bRJ8hoLHqtE5L1OYYWnuu2H+VrFKvs8i/3e8jIHz1bbeEcJV7qCKQCoeuSBqfBc8KSj/f5pCOns364rjoqdrgXhktwMg9MB5812zMvYSPvghpTYFhdBnC1qUziy35FhY/hl9rbWuRz2698FPrWO5YZsVrACXhWE9M+WnREBjvGuBs14Dd+hQeNE2HsaLZ9vPnQyejRzPIM7fugKx+MfZmeOklFgGJ1SIwbu5HmccqAvG7yjENravK9qJ+uh1GQ=
+  app: smite-randomizer-client
+  on:
+    repo: lbox87/smite-randomizer-client
