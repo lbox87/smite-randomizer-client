@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import AboutApp from './about-app';
 import RegistrationForm from './registration-form';
 // import './landing-page.css';
 
