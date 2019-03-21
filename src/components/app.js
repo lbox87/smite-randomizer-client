@@ -5,7 +5,7 @@ import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
 import RandomizePage from './randomize-page';
 import GodResultPage from './god-result-page';
-
+import SavedBuildsPage from './saved-builds-page';
 
 // import './app.css';
 
@@ -18,6 +18,7 @@ export default function App() {
             <RegistrationPage />
             <RandomizePage />
             <GodResultPage />
+            <SavedBuildsPage />
             </main>
         </div>
 
