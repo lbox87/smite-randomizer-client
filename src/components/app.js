@@ -6,6 +6,7 @@ import RegistrationPage from './registration-page';
 import RandomizePage from './randomize-page';
 import GodResultPage from './god-result-page';
 
+
 // import './app.css';
 
 export default function App() {
