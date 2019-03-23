@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import Header from './header';
 import LandingPage from './landing-page';
@@ -11,16 +12,22 @@ import SavedBuildsPage from './saved-builds-page';
 
 export default function App() {
     return (
+        <Router>
         <div>
             <Header />
             <main role="main">
-            <LandingPage />
+            {/* <LandingPage />
             <RegistrationPage />
             <RandomizePage />
             <GodResultPage />
-            <SavedBuildsPage />
+            <SavedBuildsPage /> */}
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/registration" component={RegistrationPage} />
+            <Route exact path="/randomize" component={RandomizePage} />
+            <Route exact path="/results" component={GodResultPage} />
+            <Route exact path="/mybuilds" component={SavedBuildsPage} />
             </main>
         </div>
-
+        </Router>
     );
 }
