@@ -8,6 +8,16 @@ export default function TopNav() {
         <nav>
             <div class='links-top-wrapper'>
             <ul class="ul-top">
+            <li>
+                    {/* <a href=""
+                        className=""
+                        aria-label="Sign in"
+                    //   onClick={() => props.onSignIn()}
+                    >
+                        Sign in
+                    </a> */}
+                    <Link to="/" class='link'>Sign in</Link>
+                </li>
                 <li>
                     {/* <a href=""
                         className=""
@@ -17,16 +27,6 @@ export default function TopNav() {
                         Register
                     </a> */}
                     <Link to="/registration" class='link'>Register</Link>
-                </li>
-                <li>
-                    {/* <a href=""
-                        className=""
-                        aria-label="Sign in"
-                    //   onClick={() => props.onSignIn()}
-                    >
-                        Sign in
-                    </a> */}
-                    <Link to="/" class='link'>Sign in</Link>
                 </li>
                 <li>
                     {/* <a href=""
