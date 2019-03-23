@@ -17,3 +17,15 @@ code {
   height: 200px;
   width: 200px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* * {
+  border: solid black .5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+} */

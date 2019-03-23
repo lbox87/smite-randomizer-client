@@ -6,7 +6,7 @@ import RandomizeGodForm from './randomize-god-form';
 
 export default function RandomizePage() {
     return (
-        <div>
+        <div class='container'>
             <h2>Randomize a God!</h2>
             <RandomizeGodForm />
         </div>

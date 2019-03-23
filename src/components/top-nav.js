@@ -1,11 +1,12 @@
 import React from 'react';
 
-// import './top-nav.css';
+import './top-nav.css';
 
 export default function TopNav() {
     return (
         <nav>
-            <ul className="">
+            <div class='links-top-wrapper'>
+            <ul class="ul-top">
                 <li>
                     <a href=""
                         className=""
@@ -42,6 +43,7 @@ export default function TopNav() {
                     </a>
                 </li>
             </ul>
+            </div>
         </nav>
     );
 }
