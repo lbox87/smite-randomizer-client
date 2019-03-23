@@ -10,6 +10,7 @@ export default function GodResultPage() {
             <h2>You Randomed <span class="god-name-result">Zeus</span>!</h2>
             <GodResult />
             <ItemResultsPage />
+            
         </div>
     );
 }
