@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // import './login-form.css';
 
@@ -32,7 +33,7 @@ export default function RandomizeGodForm() {
                     <input type="checkbox" name="warrior-check" id="warrior-check" checked />
                 </div>
 
-                <button type="submit" class="randomize-god-button">Random God!</button>
+                <button type="submit" class="randomize-god-button"><Link to="/results" class='link'>Random God!</Link></button>
 
             </form>
         </div>

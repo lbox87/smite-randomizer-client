@@ -14,8 +14,8 @@ code {
 }
 
 .god-image {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 .container {
@@ -33,4 +33,9 @@ code {
 .link {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+#item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
+  height: 75px;
+  width: 75px;
 }
