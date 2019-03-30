@@ -53,9 +53,6 @@ export default class RandomizeGodForm extends React.Component {
         godsSelected.push(key).toString();
       }
     }
-    // let data = {
-    //   check: godsSelected.toString()
-    // };
     console.log(godsSelected)
 
     fetch('https://vast-fjord-13474.herokuapp.com/random')
