@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+const {API_BASE_URL} = require('./config');
 
 // import './randomize-god-form.css';
 
@@ -54,8 +55,9 @@ export default class RandomizeGodForm extends React.Component {
       }
     }
     console.log(godsSelected)
-
-    fetch('https://vast-fjord-13474.herokuapp.com/random')
+    console.log(this.state)
+    
+    fetch(API_BASE_URL + 'random')
       .then(response => {
         if (response.ok) {
           return response.json();
