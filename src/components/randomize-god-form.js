@@ -3,39 +3,96 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // import './login-form.css';
 
-export default function RandomizeGodForm() {
+export default class RandomizeGodForm extends React.Component {
+    // constructor(props) {
+    //     super(props);
+
+    // }
+
+    state = {
+        assassin: true,
+        guardian: true,
+        hunter: true,
+        mage: true,
+        warrior: true
+    };
+    
+  toggleChangeAssassin = () => {
+    this.setState(prevState => ({
+      assassin: !prevState.assassin,
+    }));
+  }
+
+  toggleChangeGuardian = () => {
+    this.setState(prevState => ({
+      guardian: !prevState.guardian,
+    }));
+  }
+
+  toggleChangeHunter = () => {
+    this.setState(prevState => ({
+      hunter: !prevState.hunter,
+    }));
+  }
+
+  toggleChangeMage = () => {
+    this.setState(prevState => ({
+      mage: !prevState.mage,
+    }));
+  }
+
+  toggleChangeWarrior = () => {
+    this.setState(prevState => ({
+      warrior: !prevState.warrior,
+    }));
+  }
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+    }
+
+    render() {
     return (
         <div>
-            <form class="randomizer-form">
+            <form className="randomizer-form" onSubmit = {this.onSubmit}>
 
                 <label for="assassin-check">Include Assassins</label>
-                <div class="form-input">
-                    <input type="checkbox" name="assassin-check" id="assassin-check" checked />
-                </div>
-
-                <label for="hunter-check">Include Hunters</label>
-                <div class="form-input">
-                    <input type="checkbox" name="hunter-check" id="hunter-check" checked />
+                <div className="form-input">
+                    <input type="checkbox" name="assassin-check" id="assassin-check" 
+                    checked={this.state.assassin} onChange={this.toggleChangeAssassin}/>
                 </div>
 
                 <label for="guardian-check">Include Guardians</label>
-                <div class="form-input">
-                    <input type="checkbox" name="guardian-check" id="guardian-check" checked />
+                <div className="form-input">
+                    <input type="checkbox" name="guardian-check" id="guardian-check" 
+                    checked={this.state.guardian} onChange={this.toggleChangeGuardian}/>
+                </div>
+
+                <label for="hunter-check">Include Hunters</label>
+                <div className="form-input">
+                    <input type="checkbox" name="hunter-check" id="hunter-check" 
+                    checked={this.state.hunter} onChange={this.toggleChangeHunter}/>
                 </div>
 
                 <label for="mage-check">Include Mages</label>
-                <div class="form-input">
-                    <input type="checkbox" name="mage-check" id="mage-check" checked />
+                <div className="form-input">
+                    <input type="checkbox" name="mage-check" id="mage-check" 
+                    checked={this.state.mage} onChange={this.toggleChangeMage}/>
                 </div>
 
                 <label for="warrior-check">Include Warriors</label>
-                <div class="form-input">
-                    <input type="checkbox" name="warrior-check" id="warrior-check" checked />
+                <div className="form-input">
+                    <input type="checkbox" name="warrior-check" id="warrior-check" 
+                    checked={this.state.warrior} onChange={this.toggleChangeWarrior} />
                 </div>
 
-                <button type="submit" class="randomize-god-button"><Link to="/results" class='link'>Random God!</Link></button>
+                <button className="randomize-god-button" >
+                    Random God!
+                </button>
 
             </form>
         </div>
     );
+    }
 }
