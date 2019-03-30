@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-// import './login-form.css';
+// import './randomize-god-form.css';
 
 export default class RandomizeGodForm extends React.Component {
     // constructor(props) {
@@ -50,6 +50,27 @@ export default class RandomizeGodForm extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
+        let arr = [];
+        for (var key in this.state) {
+          if(this.state[key] === true) {
+            arr.push(key);
+          }
+        }
+        let data = {
+          check: arr.toString() 
+        };
+        console.log(data)
+
+        fetch('https://vast-fjord-13474.herokuapp.com/random')
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(response => {
+            console.log(response);
+            // displayCharacters(response);
+        })
     }
 
     render() {
