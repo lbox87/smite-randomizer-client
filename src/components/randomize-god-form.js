@@ -12,7 +12,7 @@ export default class RandomizeGodForm extends React.Component {
       guardian: true,
       hunter: true,
       mage: true,
-      warrior: true
+      warrior: true,
     };
   }
 
@@ -72,6 +72,7 @@ export default class RandomizeGodForm extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.thing}>Some Text</button>
         <form className="randomizer-form" onSubmit={this.onSubmit}>
 
           <label for="assassin-check">Include Assassins</label>
