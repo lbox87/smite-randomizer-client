@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <header className='container'>
             <h1>SMITE God Randomizer</h1>
-            <TopNav />
+            {/* <TopNav /> */}
         </header>
     );
 }
