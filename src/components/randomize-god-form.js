@@ -13,6 +13,7 @@ export default class RandomizeGodForm extends React.Component {
       hunter: true,
       mage: true,
       warrior: true,
+      god: ""
     };
   }
 
@@ -65,13 +66,18 @@ export default class RandomizeGodForm extends React.Component {
       })
       .then(response => {
         console.log(response);
+        console.log(this.state.god);
+        this.setState( {god: response.gods.name})
+        console.log(this.state.god);
         // displayGods(response);
       })
   }
+  
 
   render() {
     return (
       <div>
+        <h1>You Randomed {this.state.god}</h1>
         <button onClick={this.props.thing}>Some Text</button>
         <form className="randomizer-form" onSubmit={this.onSubmit}>
 
@@ -105,7 +111,7 @@ export default class RandomizeGodForm extends React.Component {
               checked={this.state.warrior} onChange={this.toggleChangeWarrior} />
           </div>
 
-          <button className="randomize-god-button" >
+          <button className="randomize-god-button">
             Random God!
                 </button>
 
