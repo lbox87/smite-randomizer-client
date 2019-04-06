@@ -69,6 +69,7 @@ export default class RandomizeGodForm extends React.Component {
       })
       .then(response => {
         this.setState( {god: response.gods.name})
+        this.setState( {image: response.gods.image})
       })
   }
   
