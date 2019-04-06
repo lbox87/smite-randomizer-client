@@ -6,7 +6,7 @@ import LoginForm from './login-form';
 
 export default function LandingPage() {
     return (
-        <div class='container'>
+        <div className='container'>
             <AboutApp />
             <LoginForm />
         </div>

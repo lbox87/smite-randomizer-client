@@ -5,7 +5,7 @@ import RegistrationForm from './registration-form';
 
 export default function RegistrationPage() {
     return (
-        <div class='container'>
+        <div className='container'>
             <h2>Set up your account!</h2>
             <RegistrationForm />
         </div>

@@ -6,8 +6,8 @@ import GodResultButtons from './god-result-buttons';
 
 export default function GodResult() {
     return (
-        <div class="random-god-results">
-            <img src={Zeus} alt="zeus" class="god-image" />
+        <div className="random-god-results">
+            <img src={Zeus} alt="zeus" className="god-image" />
             <GodResultButtons />
         </div>
     );

@@ -6,8 +6,8 @@ import './top-nav.css';
 export default function TopNav() {
     return (
         <nav>
-            <div class='links-top-wrapper'>
-            <ul class="ul-top">
+            <div className='links-top-wrapper'>
+            <ul className="ul-top">
             <li>
                     {/* <a href=""
                         className=""
@@ -16,7 +16,7 @@ export default function TopNav() {
                     >
                         Sign in
                     </a> */}
-                    <Link to="/" class='link'>Sign in</Link>
+                    <Link to="/" className='link'>Sign in</Link>
                 </li>
                 <li>
                     {/* <a href=""
@@ -26,7 +26,7 @@ export default function TopNav() {
                     >
                         Register
                     </a> */}
-                    <Link to="/registration" class='link'>Register</Link>
+                    <Link to="/registration" className='link'>Register</Link>
                 </li>
                 <li>
                     {/* <a href=""
@@ -36,7 +36,7 @@ export default function TopNav() {
                     >
                         Continue without log in
                     </a> */}
-                    <Link to="/randomize" class='link'>Continue without log in</Link>
+                    <Link to="/randomize" className='link'>Continue without log in</Link>
                 </li>
                 <li>
                     {/* <a href=""
@@ -45,7 +45,7 @@ export default function TopNav() {
                     >
                         My Saved Builds
                     </a> */}
-                    <Link to="/mybuilds" class='link'>My Saved Builds</Link>
+                    <Link to="/mybuilds" className='link'>My Saved Builds</Link>
                 </li>
             </ul>
             </div>

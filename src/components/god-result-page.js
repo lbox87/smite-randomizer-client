@@ -6,8 +6,8 @@ import ItemResultsPage from './item-results-page';
 
 export default function GodResultPage() {
     return (
-        <div class='container'>
-            <h2>You Randomed <span class="god-name-result">Zeus</span>!</h2>
+        <div className='container'>
+            <h2>You Randomed <span className="god-name-result">Zeus</span>!</h2>
             <GodResult />
             <ItemResultsPage />
             

@@ -59,7 +59,7 @@ constructor(props) {
 
 render() {
     return (
-        <div class='container'>
+        <div className='container'>
             {/* <h1>{this.state.toggle ?"true":"false"}</h1>
             <h1>Assassin{this.state.assassin ?"true":"false"}</h1>
             <h1>Guardian{this.state.guardian ?"true":"false"}</h1>

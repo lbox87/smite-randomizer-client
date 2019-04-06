@@ -6,11 +6,11 @@ import SavedBuildsButtons from './saved-builds-buttons';
 export default function SavedBuilds() {
     return (
         <div>
-            <ul class="saved-builds">
-                <li class="build-1" id="this-will-be-a-get-request-result">
+            <ul className="saved-builds">
+                <li className="build-1" id="this-will-be-a-get-request-result">
                     <h3>Zues</h3>
-                    <div class="saved-god-results" id="saved-1">
-                        <img src={require('./images/zeus.jpg')} alt="zeus" class="god-image"/>
+                    <div className="saved-god-results" id="saved-1">
+                        <img src={require('./images/zeus.jpg')} alt="zeus" className="god-image"/>
                         <img src={require('./images/doom-orb.jpg')} alt="doom-orb" id="item-1"/>
                         <img src={require('./images/ethereal-staff.jpg')} alt="ethereal-staff" id="item-2"/>
                         <img src={require('./images/genjis-guard.jpg')} alt="genjis-guard" id="item-3"/>
@@ -20,10 +20,10 @@ export default function SavedBuilds() {
                         <SavedBuildsButtons />
                     </div>
                 </li>
-                <li class="build-2" id="this-will-be-a-get-request-result">
+                <li className="build-2" id="this-will-be-a-get-request-result">
                     <h3>Zues 2</h3>
-                    <div class="saved-god-results" id="saved-2">
-                        <img src={require('./images/zeus.jpg')} alt="zeus" class="god-image"/>
+                    <div className="saved-god-results" id="saved-2">
+                        <img src={require('./images/zeus.jpg')} alt="zeus" className="god-image"/>
                         <img src={require('./images/doom-orb.jpg')} alt="doom-orb" id="item-1"/>
                         <img src={require('./images/ethereal-staff.jpg')} alt="ethereal-staff" id="item-2"/>
                         <img src={require('./images/genjis-guard.jpg')} alt="genjis-guard" id="item-3"/>

@@ -65,22 +65,15 @@ export default class RandomizeGodForm extends React.Component {
         }
       })
       .then(response => {
-        console.log(response);
-        console.log(this.state.god);
         this.setState( {god: response.gods.name})
-        console.log(this.state.god);
-        // displayGods(response);
       })
   }
   
-
   render() {
     return (
       <div>
-        <h1>You Randomed {this.state.god}</h1>
-        <button onClick={this.props.thing}>Some Text</button>
+        <h3>You Randomed {this.state.god}</h3>
         <form className="randomizer-form" onSubmit={this.onSubmit}>
-
           <label for="assassin-check">Include Assassins</label>
           <div className="form-input">
             <input type="checkbox" name="assassin-check" id="assassin-check"
@@ -111,10 +104,7 @@ export default class RandomizeGodForm extends React.Component {
               checked={this.state.warrior} onChange={this.toggleChangeWarrior} />
           </div>
 
-          <button className="randomize-god-button">
-            Random God!
-                </button>
-
+          <button className="randomize-god-button">Random God!</button>
         </form>
       </div>
     );

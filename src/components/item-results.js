@@ -6,7 +6,7 @@ import ItemResultsButtons from './item-results-buttons';
 
 export default function ItemResults() {
     return (
-        <div class="random-item-results">
+        <div className="random-item-results">
                 <img src={require('./images/doom-orb.jpg')} alt="doom-orb" id="item-1" />
                 <img src={require('./images/ethereal-staff.jpg')} alt="ethereal-staff" id="item-2" />
                 <img src={require('./images/genjis-guard.jpg')} alt="genjis-guard" id="item-3" />

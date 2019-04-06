@@ -4,9 +4,9 @@ import React from 'react';
 
 export default function SavedBuildsButtons() {
     return (
-            <div class="god-button-options">
-                <button type="button" class="edit-build-button"> Edit Build </button>
-                <button type="button" class="delete-build-button"> Delete Build </button>
+            <div className="god-button-options">
+                <button type="button" className="edit-build-button"> Edit Build </button>
+                <button type="button" className="delete-build-button"> Delete Build </button>
             </div>
     );
 }
