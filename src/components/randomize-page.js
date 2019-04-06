@@ -67,7 +67,7 @@ render() {
             <h1>Mage{this.state.mage ?"true":"false"}</h1>
             <h1>Warrior{this.state.warrior ?"true":"false"}</h1>
             <h1>{this.state.randomedGod}</h1> */}
-            <h2>Choose Your Class Filters then Click Random God</h2>
+            <p>Choose Your Class Filters then Click Random God</p>
             <RandomizeGodForm 
             thing={this.getGod}
             toggleAssassin={this.toggleChangeAssassin} 

@@ -10,7 +10,7 @@ export default function GodResultPage(props) {
             <h2>You Randomed <span className="god-name-result">{props.god}</span></h2>
             <img src={props.image} alt={props.god} className="god-image" />
 
-            <ItemResultsPage />
+            {/* <ItemResultsPage /> */}
             
         </div>
     );

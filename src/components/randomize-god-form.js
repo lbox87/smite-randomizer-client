@@ -77,7 +77,7 @@ export default class RandomizeGodForm extends React.Component {
     return (
       <div>
         {/* <h3>You Randomed {this.state.god}</h3> */}
-        <GodResultPage god={this.state.god} image={this.state.image}/>
+        
         <form className="randomizer-form" onSubmit={this.onSubmit}>
           <label for="assassin-check">Include Assassins</label>
           <div className="form-input">
@@ -111,6 +111,7 @@ export default class RandomizeGodForm extends React.Component {
 
           <button className="randomize-god-button">Random God!</button>
         </form>
+        <GodResultPage god={this.state.god} image={this.state.image}/>
       </div>
     );
   }
