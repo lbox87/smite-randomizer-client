@@ -6,7 +6,7 @@ import ItemResultsPage from './item-results-page';
 
 export default function GodResultPage(props) {
     return (
-        <div className='container'>
+        <div className=''>
             <h2>You Randomed <span className="god-name-result">{props.god}</span></h2>
             <img src={props.image} alt={props.god} className="god-image" />
 
