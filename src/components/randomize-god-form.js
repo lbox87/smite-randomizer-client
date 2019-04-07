@@ -11,6 +11,7 @@ export default class RandomizeGodForm extends React.Component {
     super(props);
     this.state = {
       
+      
       assassin: true,
       guardian: true,
       hunter: true,
