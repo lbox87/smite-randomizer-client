@@ -1,16 +1,13 @@
 import React from 'react';
 import GodResultPage from './god-result-page';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
-
-
 // import './randomize-god-form.css';
 
 export default class RandomizeGodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
       assassin: true,
       guardian: true,
       hunter: true,
@@ -20,11 +17,11 @@ export default class RandomizeGodForm extends React.Component {
       image: "",
       filters: [],
       // classes: {
-      //   assassin2: true,
-      //   guardian2: true,
-      //   hunter2: true,
-      //   mage2: true,
-      //   warrior2: true,
+      //   assassin: true,
+      //   guardian: true,
+      //   hunter: true,
+      //   mage: true,
+      //   warrior: true,
       // }
     };
   }
