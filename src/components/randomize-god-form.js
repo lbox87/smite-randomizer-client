@@ -10,16 +10,36 @@ export default class RandomizeGodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      
       assassin: true,
       guardian: true,
       hunter: true,
       mage: true,
       warrior: true,
       god: "",
-      image: ""
+      image: "",
+      filters: [],
+      // classes: {
+      //   assassin2: true,
+      //   guardian2: true,
+      //   hunter2: true,
+      //   mage2: true,
+      //   warrior2: true,
+      // }
     };
   }
-
+// getGod() {
+//     this.setState({
+//         toggle: !this.state.toggle
+//     })
+// }
+// toggleChangeAssassin = (event) => {
+//   console.log(this.state.classes.assassin)
+//   this.setState({
+//     classes: {assassin: event.target.value}
+//     })
+//     console.log(this.state.classes.assassin)
+// }
   toggleChangeAssassin = () => {
     this.setState(prevState => ({
       assassin: !prevState.assassin,
@@ -52,16 +72,22 @@ export default class RandomizeGodForm extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    let godsSelected = [];
+    // let godsSelected = [];
+    this.state.filters = [];
     for (var key in this.state) {
       if (this.state[key] === true) {
-        godsSelected.push(key).toString();
+        this.state.filters.push(key).toString();
       }
     }
-    console.log(godsSelected)
-    console.log(this.state)
+    // this.state.filters = godsSelected;
+    // console.log(godsSelected);
+    // console.log(this.state.assassin);
+    console.log(this.state.filters);
+    let fetchGod = "";
+    
     
     fetch(API_BASE_URL + 'random')
+      // .send()
       .then(response => {
         if (response.ok) {
           return response.json();
