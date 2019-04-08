@@ -16,6 +16,7 @@ export default class RandomizeGodForm extends React.Component {
       god: "",
       image: "",
       filters: [],
+      fetchGod: ""
       // classes: {
       //   assassin: true,
       //   guardian: true,
@@ -71,16 +72,19 @@ export default class RandomizeGodForm extends React.Component {
     event.preventDefault();
     // let godsSelected = [];
     this.state.filters = [];
+    this.state.fetchGod = "";
     for (var key in this.state) {
       if (this.state[key] === true) {
         this.state.filters.push(key).toString();
+        this.state.fetchGod = this.state.filters.toString().replace(",","+") 
       }
     }
     // this.state.filters = godsSelected;
     // console.log(godsSelected);
     // console.log(this.state.assassin);
+    console.log(this.state.fetchGod);
     console.log(this.state.filters);
-    let fetchGod = "";
+    // let fetchGod = "";
     
     
     fetch(API_BASE_URL + 'random')
