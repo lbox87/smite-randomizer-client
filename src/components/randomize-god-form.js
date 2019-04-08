@@ -38,6 +38,12 @@ export default class RandomizeGodForm extends React.Component {
 //     })
 //     console.log(this.state.classes.assassin)
 // }
+toggleChangeGod = (name) => {
+  this.setState(prevState => ({
+    [name]: !prevState[name]
+  }));
+} 
+
   toggleChangeAssassin = () => {
     this.setState(prevState => ({
       assassin: !prevState.assassin,
@@ -109,7 +115,7 @@ export default class RandomizeGodForm extends React.Component {
           <label for="assassin-check">Include Assassins</label>
           <div className="form-input">
             <input type="checkbox" name="assassin-check" id="assassin-check"
-              checked={this.state.assassin} onChange={this.toggleChangeAssassin} />
+              checked={this.state.assassin} onChange={x => this.toggleChangeGod("assassin")} />
           </div>
 
           <label for="guardian-check">Include Guardians</label>

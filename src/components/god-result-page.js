@@ -34,7 +34,9 @@ render() {
         <div className=''>
             <h2>You Randomed <span className="god-name-result">{this.props.god}</span></h2>
             <img src={this.props.image} alt={this.props.god} className="god-image" />
+            <div>
             <button className="randomize-build-button" onClick={this.onClick}>Random Build!</button>
+            </div>
             <ItemResultsPage item={this.state.item} image={this.state.image}/>
             
         </div>
