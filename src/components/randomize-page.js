@@ -60,22 +60,17 @@ constructor(props) {
 render() {
     return (
         <div className='container'>
-            {/* <h1>{this.state.toggle ?"true":"false"}</h1>
-            <h1>Assassin{this.state.assassin ?"true":"false"}</h1>
-            <h1>Guardian{this.state.guardian ?"true":"false"}</h1>
-            <h1>Hunter{this.state.hunter ?"true":"false"}</h1>
-            <h1>Mage{this.state.mage ?"true":"false"}</h1>
-            <h1>Warrior{this.state.warrior ?"true":"false"}</h1>
-            <h1>{this.state.randomedGod}</h1> */}
+            {/* <h1>Assassin{this.state.assassin ?"true":"false"}</h1> */}
+
             <p>Choose Your Class Filters then Click Random God</p>
             <RandomizeGodForm 
-            thing={this.getGod}
-            toggleAssassin={this.toggleChangeAssassin} 
-            toggleGuardian={this.toggleChangeGuardian}
-            toggleHunter={this.toggleChangeHunter}
-            toggleMage={this.toggleChangeMage}
-            toggleWarrior={this.toggleChangeWarrior}
-            stateAssassin={this.state.assassin}
+            // thing={this.getGod}
+            // toggleAssassin={this.toggleChangeAssassin} 
+            // toggleGuardian={this.toggleChangeGuardian}
+            // toggleHunter={this.toggleChangeHunter}
+            // toggleMage={this.toggleChangeMage}
+            // toggleWarrior={this.toggleChangeWarrior}
+            // stateAssassin={this.state.assassin}
             />
         </div>
     );
