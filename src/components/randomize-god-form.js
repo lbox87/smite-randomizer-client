@@ -16,7 +16,8 @@ export default class RandomizeGodForm extends React.Component {
       god: "",
       image: "",
       class: "",
-      itemsAvailable: []
+      itemsAvailable: [],
+      isHidden: true
       
       // filters: [],
       // fetchGod: "",
@@ -29,6 +30,12 @@ export default class RandomizeGodForm extends React.Component {
       //   Warrior: true,
       // }
     };
+  }
+
+  toggleHidden (){
+    this.setState(
+      {isHidden: !this.state.isHidden}
+    )
   }
 // getGod() {
 //     this.setState({
@@ -166,9 +173,17 @@ toggleChangeGod = (name) => {
               checked={this.state.Warrior} onChange={this.toggleChangeWarrior} />
           </div>
 
-          <button className="randomize-god-button">Random God!</button>
+          <button className="randomize-god-button" 
+          // onClick={this.toggleHidden.bind(this)}
+          >Random God!</button>
         </form>
-        <GodResultPage god={this.state.god} image={this.state.image} class={this.state.class}/>
+        {/* {!this.state.isHidden &&  }*/}
+        <GodResultPage 
+        god={this.state.god} 
+        image={this.state.image} 
+        class={this.state.class}
+        />
+        
       </div>
     );
   }
