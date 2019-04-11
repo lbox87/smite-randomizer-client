@@ -10,13 +10,26 @@ export default class GodResultPage extends React.Component {
         super(props);
         this.state = {
             item: "",
-            image: ""
+            image: "",
         }
     }
 
 onClick = (event) => {
     event.preventDefault();
-    fetch(API_BASE_URL + 'items')
+
+    console.log('the curent god is a ' + this.props.class + " and named " + this.props.god)
+    let godFilters = {
+        god: this.props.god,
+        class: this.props.class
+    }
+    console.log(JSON.stringify(godFilters));
+
+    fetch(API_BASE_URL + 'items2', {
+      method: "POST",
+      body: JSON.stringify(godFilters),
+      headers: { "Content-Type": "application/json" },
+  })
+
         .then(response => {
         if (response.ok) {
             return response.json();
