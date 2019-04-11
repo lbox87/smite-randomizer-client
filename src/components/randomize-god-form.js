@@ -15,6 +15,7 @@ export default class RandomizeGodForm extends React.Component {
       Warrior: true,
       god: "",
       image: "",
+      class: "",
       itemsAvailable: []
       // filters: [],
       // fetchGod: "",
@@ -123,6 +124,7 @@ toggleChangeGod = (name) => {
         console.log(response.gods)
         this.setState( {god: response.gods.name})
         this.setState( {image: response.gods.image})
+        this.setState( {class: response.gods.class})
         // this.setState( {itemsAvailable: response.gods.itemsAvailable})
       })
   }
@@ -165,7 +167,7 @@ toggleChangeGod = (name) => {
 
           <button className="randomize-god-button">Random God!</button>
         </form>
-        <GodResultPage god={this.state.god} image={this.state.image}/>
+        <GodResultPage god={this.state.god} image={this.state.image} class={this.state.class}/>
       </div>
     );
   }
