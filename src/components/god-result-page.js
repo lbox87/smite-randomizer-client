@@ -9,8 +9,18 @@ export default class GodResultPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: "",
-            image: "",
+            item1: "",
+            image1: "",
+            item2: "",
+            image2: "",
+            item3: "",
+            image3: "",
+            item4: "",
+            image4: "",
+            item5: "",
+            image5: "",
+            item6: "",
+            image6: "",
         }
     }
 
@@ -37,8 +47,18 @@ onClick = (event) => {
         })
         .then(response => {
             console.log(response)
-            this.setState( {item: response.items.name})
-            this.setState( {image: response.items.image})
+            this.setState( {item1: response.item1.name})
+            this.setState( {image1: response.item1.image})
+            this.setState( {item2: response.item2.name})
+            this.setState( {image2: response.item2.image})
+            this.setState( {item3: response.item3.name})
+            this.setState( {image3: response.item3.image})
+            this.setState( {item4: response.item4.name})
+            this.setState( {image4: response.item4.image})
+            this.setState( {item5: response.item5.name})
+            this.setState( {image5: response.item5.image})
+            this.setState( {item6: response.item6.name})
+            this.setState( {image6: response.item6.image})
           })
       }
 
@@ -50,7 +70,14 @@ render() {
             <div>
             <button className="randomize-build-button" onClick={this.onClick}>Random Build!</button>
             </div>
-            <ItemResultsPage item={this.state.item} image={this.state.image}/>
+            <ItemResultsPage 
+            item1={this.state.item1} image1={this.state.image1}
+            item2={this.state.item2} image2={this.state.image2}
+            item3={this.state.item3} image3={this.state.image3}
+            item4={this.state.item4} image4={this.state.image4}
+            item5={this.state.item5} image5={this.state.image5}
+            item6={this.state.item6} image6={this.state.image6}
+            />
             
         </div>
     );
