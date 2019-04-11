@@ -15,6 +15,7 @@ export default function ItemResultsPage(props) {
                 <img src={props.image4} alt="item4" id="item-4" />
                 <img src={props.image5} alt="item5" id="item-5" />
                 <img src={props.image6} alt="item6" id="item-6" />
+                
             {/* <ItemResultsButtons /> */}
         </div>
             {/* <ItemResults /> */}
