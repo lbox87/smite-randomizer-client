@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ItemResults from './item-results';
-
 // import './landing-page.css';
 
 export default class ItemResultsPage extends React.Component {

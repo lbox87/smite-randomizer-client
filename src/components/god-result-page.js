@@ -1,6 +1,5 @@
 import React from 'react';
 
-import GodResult from './god-result';
 import ItemResultsPage from './item-results-page';
 const {API_BASE_URL} = require('./config');
 // import './landing-page.css';

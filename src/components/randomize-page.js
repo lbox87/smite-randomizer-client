@@ -10,12 +10,12 @@ constructor(props) {
 
     this.state = {
         // randomedGod: "joe",
-        toggle: false,
-        assassin: true,
-        guardian: true,
-        hunter: true,
-        mage: true,
-        warrior: true,
+        // toggle: false,
+        // assassin: true,
+        // guardian: true,
+        // hunter: true,
+        // mage: true,
+        // warrior: true,
     };
 
     // this.getGod = this.getGod.bind(this);
