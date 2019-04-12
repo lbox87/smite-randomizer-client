@@ -1,5 +1,7 @@
 import React from 'react';
 import GodResultPage from './god-result-page';
+import { connect } from 'react-redux';
+import {getRandomGod} from '../actions';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
 // import './randomize-god-form.css';
@@ -15,28 +17,16 @@ export default class RandomizeGodForm extends React.Component {
       Warrior: true,
       god: "",
       image: "",
-      class: "",
-      itemsAvailable: [],
-      isHidden: true
-      
-      // filters: [],
-      // fetchGod: "",
-      // request: {}
-      // classes: {
-      //   Assassin: true,
-      //   Guardian: true,
-      //   Hunter: true,
-      //   Mage: true,
-      //   Warrior: true,
-      // }
+      class: ""
+      // isHidden: true
     };
   }
 
-  toggleHidden (){
-    this.setState(
-      {isHidden: !this.state.isHidden}
-    )
-  }
+  // toggleHidden (){
+  //   this.setState(
+  //     {isHidden: !this.state.isHidden}
+  //   )
+  // }
 // getGod() {
 //     this.setState({
 //         toggle: !this.state.toggle
@@ -87,21 +77,6 @@ toggleChangeGod = (name) => {
 
   onSubmit = (event) => {
     event.preventDefault();
-    // let godsSelected = [];
-    this.state.filters = [];
-    this.state.fetchGod = "";
-    for (var key in this.state) {
-      if (this.state[key] === true) {
-        this.state.filters.push(key).toString();
-        this.state.fetchGod = this.state.filters.toString().replace(",","+") 
-      }
-    }
-    // this.state.filters = godsSelected;
-    // console.log(godsSelected);
-    // console.log(this.state.Assassin);
-    console.log("this is fetachGod " + this.state.fetchGod);
-    console.log("this is filters " + this.state.filters);
-    // let fetchGod = "";
     let classFilters = {
       Assassin: this.state.Assassin,
       Guardian: this.state.Guardian,
@@ -111,37 +86,29 @@ toggleChangeGod = (name) => {
     }
     console.log(JSON.stringify(classFilters));
 
-    // fetch(API_BASE_URL + 'random')
-    //   // .send()
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     }
-    //   })
     fetch(API_BASE_URL + 'random3', {
       method: "POST",
       body: JSON.stringify(classFilters),
       headers: { "Content-Type": "application/json" },
-  })
-  .then(response => {
+    })
+
+    .then(response => {
     if (response.ok) {
       return response.json();
     }
-  })
-      .then(response => {
+    })
+    
+    .then(response => {
         console.log(response.gods)
         this.setState( {god: response.gods.name})
         this.setState( {image: response.gods.image})
         this.setState( {class: response.gods.class})
-        // this.setState( {itemsAvailable: response.gods.itemsAvailable})
       })
   }
   
   render() {
     return (
       <div>
-        {/* <h3>You Randomed {this.state.god}</h3> */}
-        
         <form className="randomizer-form" onSubmit={this.onSubmit}>
           <label for="assassin-check">Include Assassins</label>
           <div className="form-input">
