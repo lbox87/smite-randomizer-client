@@ -1,27 +1,21 @@
 import React from 'react';
 import GodResultPage from './god-result-page';
 import { connect } from 'react-redux';
-import {getRandomGod} from '../actions';
+import {toggleGod} from '../actions';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
 // import './randomize-god-form.css';
 
-export default class RandomizeGodForm extends React.Component {
+export class RandomizeGodForm extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      Assassin: true,
-      Guardian: true,
-      Hunter: true,
-      Mage: true,
-      Warrior: true,
-      god: "",
-      image: "",
-      class: ""
-      // isHidden: true
-    };
+    this.state = {}
   }
 
+  componentDidUpdate(newProps){
+    // this.setState(newProps)
+    // console.log(newProps)
+  }
   // toggleHidden (){
   //   this.setState(
   //     {isHidden: !this.state.isHidden}
@@ -39,41 +33,45 @@ export default class RandomizeGodForm extends React.Component {
 //     })
 //     console.log(this.state.classes.Assassin)
 // }
-toggleChangeGod = (name) => {
-  this.setState(prevState => ({
-    [name]: !prevState[name]
-  }));
-} 
+toggleChangeGod = god => () => {
+  this.props.dispatch(toggleGod(god))
+  // this.props.dispatch({
+  //   type: TOGGLE_GOD,
+  //   payload: name
+  // })
+}
 
-  toggleChangeAssassin = () => {
-    this.setState(prevState => ({
-      Assassin: !prevState.Assassin,
-    }));
-  }
 
-  toggleChangeGuardian = () => {
-    this.setState(prevState => ({
-      Guardian: !prevState.Guardian,
-    }));
-  }
 
-  toggleChangeHunter = () => {
-    this.setState(prevState => ({
-      Hunter: !prevState.Hunter,
-    }));
-  }
+  // toggleChangeAssassin = () => {
+  //   this.setState(prevState => ({
+  //     Assassin: !prevState.Assassin,
+  //   }));
+  // }
 
-  toggleChangeMage = () => {
-    this.setState(prevState => ({
-      Mage: !prevState.Mage,
-    }));
-  }
+  // toggleChangeGuardian = () => {
+  //   this.setState(prevState => ({
+  //     Guardian: !prevState.Guardian,
+  //   }));
+  // }
 
-  toggleChangeWarrior = () => {
-    this.setState(prevState => ({
-      Warrior: !prevState.Warrior,
-    }));
-  }
+  // toggleChangeHunter = () => {
+  //   this.setState(prevState => ({
+  //     Hunter: !prevState.Hunter,
+  //   }));
+  // }
+
+  // toggleChangeMage = () => {
+  //   this.setState(prevState => ({
+  //     Mage: !prevState.Mage,
+  //   }));
+  // }
+
+  // toggleChangeWarrior = () => {
+  //   this.setState(prevState => ({
+  //     Warrior: !prevState.Warrior,
+  //   }));
+  // }
 
   onSubmit = (event) => {
     event.preventDefault();
@@ -107,37 +105,38 @@ toggleChangeGod = (name) => {
   }
   
   render() {
+    console.log(this.props)
     return (
       <div>
         <form className="randomizer-form" onSubmit={this.onSubmit}>
-          <label for="assassin-check">Include Assassins</label>
+          <label htmlFor="assassin-check">Include Assassins</label>
           <div className="form-input">
             <input type="checkbox" name="assassin-check" id="assassin-check"
-              checked={this.state.Assassin} onChange={x => this.toggleChangeGod("Assassin")} />
+              checked={this.props.Assassin} onChange={this.toggleChangeGod("Assassin")} />
           </div>
 
-          <label for="guardian-check">Include Guardians</label>
+          <label htmlFor="guardian-check">Include Guardians</label>
           <div className="form-input">
             <input type="checkbox" name="guardian-check" id="guardian-check"
-              checked={this.state.Guardian} onChange={this.toggleChangeGuardian} />
+              checked={this.props.Guardian} onChange={this.toggleChangeGod("Guardian")} />
           </div>
 
-          <label for="hunter-check">Include Hunters</label>
+          <label htmlFor="hunter-check">Include Hunters</label>
           <div className="form-input">
             <input type="checkbox" name="hunter-check" id="hunter-check"
-              checked={this.state.Hunter} onChange={this.toggleChangeHunter} />
+              checked={this.props.Hunter} onChange={this.toggleChangeGod("Hunter")} />
           </div>
 
-          <label for="mage-check">Include Mages</label>
+          <label htmlFor="mage-check">Include Mages</label>
           <div className="form-input">
             <input type="checkbox" name="mage-check" id="mage-check"
-              checked={this.state.Mage} onChange={this.toggleChangeMage} />
+              checked={this.props.Mage} onChange={this.toggleChangeGod("Mage")} />
           </div>
 
-          <label for="warrior-check">Include Warriors</label>
+          <label htmlFor="warrior-check">Include Warriors</label>
           <div className="form-input">
             <input type="checkbox" name="warrior-check" id="warrior-check"
-              checked={this.state.Warrior} onChange={this.toggleChangeWarrior} />
+              checked={this.props.Warrior} onChange={this.toggleChangeGod("Warrior")} />
           </div>
 
           <button className="randomize-god-button" 
@@ -155,3 +154,5 @@ toggleChangeGod = (name) => {
     );
   }
 }
+
+export default connect(state => state)(RandomizeGodForm)

@@ -1,4 +1,5 @@
-export const RANDOM_GOD = 'RANDOM_GOD';
-export const getRandomGod = () => ({
-    type: RANDOM_GOD,
+export const TOGGLE_GOD = 'TOGGLE_GOD';
+export const toggleGod = (god) => ({
+    type: TOGGLE_GOD,
+    payload: god
 })
