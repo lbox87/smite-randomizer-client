@@ -7,9 +7,7 @@ const initialState = {
     Hunter: true,
     Mage: true,
     Warrior: true,
-    // god: "Zeus",
-    // image: "https://i.imgur.com/GqzWmPi.jpg",
-    // class: "Warrior"
+
 }
 
 export default (state = initialState, action) => {

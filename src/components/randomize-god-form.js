@@ -9,7 +9,12 @@ const {API_BASE_URL} = require('./config');
 export class RandomizeGodForm extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+
+      god: "",
+      image: "",
+      class: ""
+    }
   }
 
   componentDidUpdate(newProps){
@@ -76,11 +81,11 @@ toggleChangeGod = god => () => {
   onSubmit = (event) => {
     event.preventDefault();
     let classFilters = {
-      Assassin: this.state.Assassin,
-      Guardian: this.state.Guardian,
-      Hunter: this.state.Hunter,
-      Mage: this.state.Mage,
-      Warrior: this.state.Warrior
+      Assassin: this.props.Assassin,
+      Guardian: this.props.Guardian,
+      Hunter: this.props.Hunter,
+      Mage: this.props.Mage,
+      Warrior: this.props.Warrior
     }
     console.log(JSON.stringify(classFilters));
 
