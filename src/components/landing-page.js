@@ -2,9 +2,14 @@ import React from 'react';
 
 import AboutApp from './about-app';
 import LoginForm from './login-form';
+import {Link, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 // import './landing-page.css';
 
-export default function LandingPage() {
+export function LandingPage(props) {
+    if (props.loggedIn) {
+        return <Redirect to="/mybuilds" />;
+    }
     return (
         <div className='container'>
             <AboutApp />
@@ -12,3 +17,7 @@ export default function LandingPage() {
         </div>
     );
 }
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+export default connect(mapStateToProps)(LandingPage);
