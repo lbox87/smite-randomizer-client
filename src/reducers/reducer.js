@@ -1,5 +1,5 @@
-import { TOGGLE_GOD, toggleGod } from './actions';
-const { API_BASE_URL } = require('./components/config');
+import { TOGGLE_GOD, toggleGod } from '../actions/actions';
+const { API_BASE_URL } = require('../components/config');
 
 const initialState = {
     Assassin: true,
