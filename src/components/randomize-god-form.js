@@ -2,6 +2,7 @@ import React from 'react';
 import GodResultPage from './god-result-page';
 import { connect } from 'react-redux';
 import {toggleGod} from '../actions/toggle-god';
+// import {getGod} from '../actions/get-god';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
 // import './randomize-god-form.css';
@@ -16,6 +17,10 @@ export class RandomizeGodForm extends React.PureComponent {
     }
   }
 
+// componentDidMount() {
+//     this.props.dispatch(getGod());
+// }
+
 toggleChangeGod = god => () => {
   this.props.dispatch(toggleGod(god))
   // this.props.dispatch({
@@ -23,6 +28,7 @@ toggleChangeGod = god => () => {
   //   payload: name
   // })
 }
+
 
   onSubmit = (event) => {
     event.preventDefault();
