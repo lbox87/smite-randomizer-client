@@ -2,6 +2,7 @@ import React from 'react';
 import GodResultPage from './god-result-page';
 import { connect } from 'react-redux';
 import {toggleGod} from '../actions/actions';
+import { authError } from '../actions/auth';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
 // import './randomize-god-form.css';
@@ -17,27 +18,6 @@ export class RandomizeGodForm extends React.PureComponent {
     }
   }
 
-  componentDidUpdate(newProps){
-    // this.setState(newProps)
-    // console.log(newProps)
-  }
-  // toggleHidden (){
-  //   this.setState(
-  //     {isHidden: !this.state.isHidden}
-  //   )
-  // }
-// getGod() {
-//     this.setState({
-//         toggle: !this.state.toggle
-//     })
-// }
-// toggleChangeAssassin = (event) => {
-//   console.log(this.state.classes.Assassin)
-//   this.setState({
-//     classes: {Assassin: event.target.value}
-//     })
-//     console.log(this.state.classes.Assassin)
-// }
 toggleChangeGod = god => () => {
   this.props.dispatch(toggleGod(god))
   // this.props.dispatch({
@@ -45,38 +25,6 @@ toggleChangeGod = god => () => {
   //   payload: name
   // })
 }
-
-
-
-  // toggleChangeAssassin = () => {
-  //   this.setState(prevState => ({
-  //     Assassin: !prevState.Assassin,
-  //   }));
-  // }
-
-  // toggleChangeGuardian = () => {
-  //   this.setState(prevState => ({
-  //     Guardian: !prevState.Guardian,
-  //   }));
-  // }
-
-  // toggleChangeHunter = () => {
-  //   this.setState(prevState => ({
-  //     Hunter: !prevState.Hunter,
-  //   }));
-  // }
-
-  // toggleChangeMage = () => {
-  //   this.setState(prevState => ({
-  //     Mage: !prevState.Mage,
-  //   }));
-  // }
-
-  // toggleChangeWarrior = () => {
-  //   this.setState(prevState => ({
-  //     Warrior: !prevState.Warrior,
-  //   }));
-  // }
 
   onSubmit = (event) => {
     event.preventDefault();
@@ -153,6 +101,7 @@ toggleChangeGod = god => () => {
         god={this.state.god} 
         image={this.state.image} 
         class={this.state.class}
+        // user={this.state.currentUser}
         />
         
       </div>
@@ -160,8 +109,6 @@ toggleChangeGod = god => () => {
   }
 }
 
-// const mapStateToProps = state => ({
-//   loggedIn: state.reducer !== null
-// });
+const mapStateToProps = state => ({...state.reducer, currentUser: state.auth.currentUser});
 
-export default connect(state => state.reducer)(RandomizeGodForm)
+export default connect(mapStateToProps)(RandomizeGodForm)

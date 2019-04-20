@@ -1,25 +1,15 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import ItemResultsPage from './item-results-page';
 const {API_BASE_URL} = require('./config');
+
 // import './landing-page.css';
 
 export default class GodResultPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            item1: "",
-            image1: "",
-            item2: "",
-            image2: "",
-            item3: "",
-            image3: "",
-            item4: "",
-            image4: "",
-            item5: "",
-            image5: "",
-            item6: "",
-            image6: "",
+            this: "that"
         }
     }
 
@@ -76,20 +66,12 @@ render() {
             item4={this.state.item4} image4={this.state.image4}
             item5={this.state.item5} image5={this.state.image5}
             item6={this.state.item6} image6={this.state.image6}
+            god={this.props.god} 
+            image={this.props.image} 
+            class={this.props.class}
             />
-            
         </div>
     );
 }
 }
-// export default function GodResultPage(props) {
-//     return (
-//         <div className=''>
-//             <h2>You Randomed <span className="god-name-result">{props.god}</span></h2>
-//             <img src={props.image} alt={props.god} className="god-image" />
 
-//             <ItemResultsPage />
-            
-//         </div>
-//     );
-// }
