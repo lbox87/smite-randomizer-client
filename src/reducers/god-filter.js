@@ -1,4 +1,4 @@
-import { TOGGLE_GOD, toggleGod } from '../actions/actions';
+import { TOGGLE_GOD, toggleGod } from '../actions/toggle-god';
 const { API_BASE_URL } = require('../components/config');
 
 const initialState = {

@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 export function LandingPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/mybuilds" />;
+        // return <p>you fool!</p>
     }
     return (
         <div className='container'>

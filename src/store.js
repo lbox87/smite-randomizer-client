@@ -11,7 +11,7 @@ import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 
-import reducer from './reducers/reducer';
+import godFilterReducer from './reducers/god-filter';
 
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
@@ -20,7 +20,7 @@ const store = createStore(
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer,
-        reducer: reducer
+        godFilter: godFilterReducer
     }),
     applyMiddleware(thunk)
 );
