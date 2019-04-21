@@ -17,6 +17,7 @@ export class ItemResultsPage extends React.Component {
         // image6: this.props.image6
       };
     }
+
     onClick = (event) => {
         event.preventDefault();
         let saveBuild = {

@@ -25,6 +25,7 @@ import SavedBuilds from './saved-builds';
 export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+        console.log(this.props.protectedData)
     }
 
     render() {
@@ -35,7 +36,7 @@ export class SavedBuildsPage extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
+                    {/* Protected data: {this.props.protectedData} */}
                     <h2>Your Saved Builds</h2>
                     <p>Click Edit Build to re-roll items in your build.</p>
                     <p>Click Delete Build to remove it from your list.</p>
