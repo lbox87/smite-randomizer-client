@@ -28,7 +28,13 @@ export class ItemResultsPage extends React.Component {
             item3: this.props.item3,
             item4: this.props.item4,
             item5: this.props.item5,
-            item6: this.props.item6
+            item6: this.props.item6,
+            image1: this.props.image1,
+            image2: this.props.image2,
+            image3: this.props.image3,
+            image4: this.props.image4,
+            image5: this.props.image5,
+            image6: this.props.image6
         }
         console.log(JSON.stringify(saveBuild));
     

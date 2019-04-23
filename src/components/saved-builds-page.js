@@ -26,6 +26,24 @@ export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
         console.log(this.props.protectedData)
+        console.log(this.props.currentUser)
+        console.log(this.props.protectedData[0])
+        // if (this.props.currentUser == null) {}
+        let myBuilds = this.props.protectedData;
+        // for (var user in myBuilds) {
+        //     if (user === this.props.currentUser)
+        // }
+        console.log(myBuilds)
+        for (let i = 0; i < myBuilds; i++) {
+            if( myBuilds[i].user !== this.props.currentUser.username ) {
+              // console.log(nonBoots[i] + " was removed")
+            //   myBuilds[i] = this.props.protectedData[i]
+              // console.log(key + " is " + build[key])
+            //   console.log(myBuilds[i])
+            myBuilds.splice(i, 1);
+            }
+        }
+        console.log(myBuilds)
     }
 
     render() {
@@ -49,13 +67,19 @@ export class SavedBuildsPage extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    return {
-        username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
-    };
-};
+// const mapStateToProps = state => {
+//     const {currentUser} = state.auth.currentUser;
+//     return {
+//         username: state.auth.currentUser.username,
+//         // name: `${currentUser.firstName} ${currentUser.lastName}`,
+//         protectedData: state.protectedData.data
+//     };
+// };
+
+const mapStateToProps = state => (
+    {
+    currentUser: state.auth.currentUser, 
+    protectedData: state.protectedData.data
+    });
 
 export default requiresLogin()(connect(mapStateToProps)(SavedBuildsPage));
