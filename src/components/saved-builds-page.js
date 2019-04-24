@@ -25,7 +25,7 @@ import SavedBuilds from './saved-builds';
 export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-        console.log(this.props.protectedData)
+
 
         // console.log(this.props.currentUser)
         // console.log(this.props.protectedData[0])
@@ -53,6 +53,27 @@ export class SavedBuildsPage extends React.Component {
     //         <Card {...card} />
     //     </li>
     // );
+    // let thisBuild = {};
+
+    var tifs = {1: 'Joe', 2: 'Jane'};
+
+    // var tifOptions = Object.keys(tifs).forEach(function(key) {
+    //     return <option value={key}>{tifs[key]}</option>
+    // });
+
+    const tifOptions = Object.keys(tifs).map(key => 
+        <li value={key}>{tifs[key]}</li>
+    )
+
+// for each object indexed in the response array
+// define a variable to equal that indexed object
+// make the key:values the props of a Build component as in the Cards example
+// OR SHORT-TERM map the key:values into a variable as in the tifs example
+
+
+    console.log(this.props.protectedData)
+
+
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -67,6 +88,9 @@ export class SavedBuildsPage extends React.Component {
                     <button type="button" className="new-random"> 
                     <Link to="/results" className='link'>Randomize a New God</Link></button>
                     <SavedBuilds />
+                    <ul>
+                        {tifOptions}
+                    </ul>
                 </div>
             </div>
         );
