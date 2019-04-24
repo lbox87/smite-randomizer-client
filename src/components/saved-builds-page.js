@@ -26,27 +26,33 @@ export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
         console.log(this.props.protectedData)
-        console.log(this.props.currentUser)
-        console.log(this.props.protectedData[0])
+
+        // console.log(this.props.currentUser)
+        // console.log(this.props.protectedData[0])
         // if (this.props.currentUser == null) {}
-        let myBuilds = this.props.protectedData;
+        // let myBuilds = this.props.protectedData;
         // for (var user in myBuilds) {
         //     if (user === this.props.currentUser)
         // }
-        console.log(myBuilds)
-        for (let i = 0; i < myBuilds; i++) {
-            if( myBuilds[i].user !== this.props.currentUser.username ) {
+        // console.log(myBuilds)
+        // for (let i = 0; i < myBuilds; i++) {
+            // if( myBuilds[i].user !== this.props.currentUser.username ) {
               // console.log(nonBoots[i] + " was removed")
             //   myBuilds[i] = this.props.protectedData[i]
               // console.log(key + " is " + build[key])
             //   console.log(myBuilds[i])
-            myBuilds.splice(i, 1);
-            }
-        }
-        console.log(myBuilds)
+            // myBuilds.splice(i, 1);
+            // }
+        // }
+        // console.log(myBuilds)
     }
 
     render() {
+    //     const cards = this.props.cards.map((card, index) =>
+    //     <li key={index}>
+    //         <Card {...card} />
+    //     </li>
+    // );
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
