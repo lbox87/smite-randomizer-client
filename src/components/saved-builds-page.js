@@ -25,35 +25,48 @@ import SavedBuilds from './saved-builds';
 export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-
-
-        // console.log(this.props.currentUser)
-        // console.log(this.props.protectedData[0])
-        // if (this.props.currentUser == null) {}
-        // let myBuilds = this.props.protectedData;
-        // for (var user in myBuilds) {
-        //     if (user === this.props.currentUser)
-        // }
-        // console.log(myBuilds)
-        // for (let i = 0; i < myBuilds; i++) {
-            // if( myBuilds[i].user !== this.props.currentUser.username ) {
-              // console.log(nonBoots[i] + " was removed")
-            //   myBuilds[i] = this.props.protectedData[i]
-              // console.log(key + " is " + build[key])
-            //   console.log(myBuilds[i])
-            // myBuilds.splice(i, 1);
-            // }
-        // }
-        // console.log(myBuilds)
     }
 
     render() {
-    //     const cards = this.props.cards.map((card, index) =>
-    //     <li key={index}>
-    //         <Card {...card} />
-    //     </li>
-    // );
+        console.log(this.props.protectedData)
+        const myBuilds = this.props.protectedData.map((build, index) =>
+        <li key={index}>
+            <p>{build.god}</p>
+            <img src={build.image1} />
+        </li>
+    );
     // let thisBuild = {};
+    // let myBuilds = []
+    // let returnedBuilds = this.props.protectedData;
+    // for(let i = 0; i < returnedBuilds.length; i++){
+    //     console.log(returnedBuilds[i])
+    //     let myBuilds = Object.keys(returnedBuilds[i]).map(key => 
+    //         <SavedBuilds   />
+            // {...key} {...returnedBuilds[i][key]}
+            // <li value={key}>{tifs[key]}</li>
+        // )
+        // myBuilds.push(<img src={returnedBuilds[i].image1} alt={returnedBuilds[i].god} className="god-image"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image1} alt={returnedBuilds[i].item1} id="item-1"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image2} alt={returnedBuilds[i].item2} id="item-2"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image3} alt={returnedBuilds[i].item3} id="item-3"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image4} alt={returnedBuilds[i].item4} id="item-4"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image5} alt={returnedBuilds[i].item5} id="item-5"/>)
+        // myBuilds.push(<img src={returnedBuilds[i].image6} alt={returnedBuilds[i].item6} id="item-6"/>)
+                // Object.keys(returnedBuilds[i]).map(
+            // key => 
+                // <img src={returnedBuilds[i].image1} alt={returnedBuilds[i].god} className="god-image"/>
+                // <img src={returnedBuilds[i].image1} alt={returnedBuilds[i].item1} id="item-1"/>
+                // <img src={returnedBuilds[i].image2} alt={returnedBuilds[i].item2} id="item-2"/>
+                // <img src={returnedBuilds[i].image3} alt={returnedBuilds[i].item3} id="item-3"/>
+                // <img src={returnedBuilds[i].image4} alt={returnedBuilds[i].item4} id="item-4"/>
+                // <img src={returnedBuilds[i].image5} alt={returnedBuilds[i].item5} id="item-5"/>
+                // <img src={returnedBuilds[i].image6} alt={returnedBuilds[i].item6} id="item-6"/>
+                // <button type="button" className="edit-build-button"> Edit Build </button>
+                // <button type="button" className="delete-build-button"> Delete Build </button>
+            
+        // )
+    // };
+    // console.log (myBuilds)
 
     var tifs = {1: 'Joe', 2: 'Jane'};
 
@@ -65,11 +78,12 @@ export class SavedBuildsPage extends React.Component {
         <li value={key}>{tifs[key]}</li>
     )
 
+    console.log(tifOptions)
 // for each object indexed in the response array
 // define a variable to equal that indexed object
 // make the key:values the props of a Build component as in the Cards example
 // OR SHORT-TERM map the key:values into a variable as in the tifs example
-
+    
 
     console.log(this.props.protectedData)
 
@@ -87,9 +101,10 @@ export class SavedBuildsPage extends React.Component {
                     <p>Click Delete Build to remove it from your list.</p>
                     <button type="button" className="new-random"> 
                     <Link to="/results" className='link'>Randomize a New God</Link></button>
-                    <SavedBuilds />
+                    {/* <SavedBuilds /> */}
                     <ul>
-                        {tifOptions}
+                        {/* {tifOptions} */}
+                        {myBuilds}
                     </ul>
                 </div>
             </div>
