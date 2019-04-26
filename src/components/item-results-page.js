@@ -23,6 +23,7 @@ export class ItemResultsPage extends React.Component {
         let saveBuild = {
             user: this.props.currentUser.username,
             god: this.props.god,
+            image: this.props.image,
             item1: this.props.item1,
             item2: this.props.item2,
             item3: this.props.item3,
