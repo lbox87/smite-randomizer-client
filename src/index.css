@@ -6,15 +6,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #070736de;
+  background-color: #0a0a53de;
   color: #ffb31a;
-  background-image: url("https://cdn.pixabay.com/photo/2014/04/02/11/12/lightning-305555_960_720.png");
+  background-image: url("./images/lightning-305555_960_720.png");
   background-repeat:no-repeat;
   background-position-y: 150px;
   background-position-x: 50%;
   background-blend-mode: color;
   background-size: 300px 300px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold
 }
 
 a {
@@ -65,5 +66,8 @@ code {
   .god-image {
     height: 67px;
     width: 67px;
+  }
+  body{
+    font-size: 10pt
   }
 }
