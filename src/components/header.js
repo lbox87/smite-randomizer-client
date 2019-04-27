@@ -10,13 +10,11 @@ export function Header(props) {
             <h1>SMITE God Randomizer</h1>
             <nav>
                 <div className='links-top-wrapper'>
-                    <ul className="ul-top">
-                        <li><Link to="/randomize" className='link'>Roll a New God</Link></li>
-                        <li><Link to="/mybuilds" className='link'>My Saved Builds</Link></li>
-                    </ul>
+                        <Link to="/randomize" className='link'>Roll a New God</Link>
+                        <Link to="/mybuilds" className='link'>My Saved Builds</Link>
                 </div>
             </nav>
-            {/* <TopNav /> */}
+
         </header>
         )
     }
@@ -25,14 +23,11 @@ export function Header(props) {
             <h1>SMITE God Randomizer</h1>
             <nav>
                 <div className='links-top-wrapper'>
-                    <ul className="ul-top">
-                        <li><Link to="/" className='link'>Sign in</Link></li>
-                        <li><Link to="/registration" className='link'>Register</Link></li>
-                        <li><Link to="/randomize" className='link'>Continue without log in</Link></li>
-                    </ul>
+                        <Link to="/" className='link'>Sign in</Link>
+                        <Link to="/registration" className='link'>Register</Link>
+                        <Link to="/randomize" className='link'>Continue without log in</Link>
                 </div>
             </nav>
-            {/* <TopNav /> */}
         </header>
     );
 }
