@@ -8,50 +8,53 @@ const {API_BASE_URL} = require('./config');
 export default class GodResultPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            this: "that"
-        }
+        this.state = {item1: ""}
     }
 
 onClick = (event) => {
     event.preventDefault();
-
-    console.log('the curent god is a ' + this.props.class + " and named " + this.props.god)
     let godFilters = {
         god: this.props.god,
         class: this.props.class
     }
-    console.log(JSON.stringify(godFilters));
-
     fetch(API_BASE_URL + 'items2', {
       method: "POST",
       body: JSON.stringify(godFilters),
       headers: { "Content-Type": "application/json" },
-  })
-
-        .then(response => {
+    })
+    .then(response => {
         if (response.ok) {
             return response.json();
             }
+    })
+    .then(response => {
+        this.setState( {item1: response.item1.name})
+        this.setState( {image1: response.item1.image})
+        this.setState( {item2: response.item2.name})
+        this.setState( {image2: response.item2.image})
+        this.setState( {item3: response.item3.name})
+        this.setState( {image3: response.item3.image})
+        this.setState( {item4: response.item4.name})
+        this.setState( {image4: response.item4.image})
+        this.setState( {item5: response.item5.name})
+        this.setState( {image5: response.item5.image})
+        this.setState( {item6: response.item6.name})
+        this.setState( {image6: response.item6.image})
         })
-        .then(response => {
-            console.log(response)
-            this.setState( {item1: response.item1.name})
-            this.setState( {image1: response.item1.image})
-            this.setState( {item2: response.item2.name})
-            this.setState( {image2: response.item2.image})
-            this.setState( {item3: response.item3.name})
-            this.setState( {image3: response.item3.image})
-            this.setState( {item4: response.item4.name})
-            this.setState( {image4: response.item4.image})
-            this.setState( {item5: response.item5.name})
-            this.setState( {image5: response.item5.image})
-            this.setState( {item6: response.item6.name})
-            this.setState( {image6: response.item6.image})
-          })
-      }
+}
 
 render() {
+    if (this.state.item1 === "") {
+        return (
+            <div className=''>
+            <h2>You Randomed <span className="god-name-result">{this.props.god}</span></h2>
+            <img src={this.props.image} alt={this.props.god} className="god-image" />
+            <div>
+            <button className="randomize-build-button" onClick={this.onClick}>Random Build!</button>
+            </div>
+            </div>
+        )
+      }
     return (
         <div className=''>
             <h2>You Randomed <span className="god-name-result">{this.props.god}</span></h2>
