@@ -1,7 +1,7 @@
-// import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import React from 'react';
 import {connect} from 'react-redux';
+import SavedBuildsButtons from './saved-builds-buttons';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import './saved-builds.css';
@@ -23,6 +23,9 @@ export class SavedBuildsPage extends React.Component {
             <img src={build.image4} class="item"/>
             <img src={build.image5} class="item"/>
             <img src={build.image6} class="item"/>
+            <div>
+            <SavedBuildsButtons id={build.id} />
+            </div>
         </li>
     );
     console.log(myBuilds);
@@ -43,6 +46,7 @@ export class SavedBuildsPage extends React.Component {
                     <div className="myBuilds">
                         <ul>
                             {myBuilds}
+
                         </ul>
                     </div>
                 </div>

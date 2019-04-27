@@ -55,6 +55,10 @@ code {
   width: 125px;
 }
 
+.god-image-build {
+  height: 80px;
+  width: 80px;
+}
 .item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
   height:80px;
   width:80px;
