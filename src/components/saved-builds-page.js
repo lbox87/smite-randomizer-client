@@ -16,7 +16,7 @@ export class SavedBuildsPage extends React.Component {
         const myBuilds = this.props.protectedData.map((build, index) =>
         <li key={index}>
             <p>{build.god}</p>
-            <img src={build.image} class="god-image"/>
+            <img src={build.image} class="god-image-build"/>
             <img src={build.image1} class="item"/>
             <img src={build.image2} class="item"/>
             <img src={build.image3} class="item"/>
