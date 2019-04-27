@@ -69,7 +69,7 @@ render() {
                 <img src={this.props.image4} alt="item4" id="item-4" />
                 <img src={this.props.image5} alt="item5" id="item-5" />
                 <img src={this.props.image6} alt="item6" id="item-6" />        
-                <p><Link to="/" className='link'>Sign in</Link>or<Link to="/registration" className='link'>Register</Link>to save this build!</p>
+                <p><Link to="/" className='link'>Sign in</Link>or<Link to="/registration" className='link'>Register</Link>to save builds.</p>
             </div>
         </div>
         );
@@ -77,7 +77,7 @@ render() {
     else {
         return (
            <div>
-               <p>Click an Item to re-roll it!</p>
+               {/* <p>Click an Item to re-roll it!</p> */}
                <div className="random-item-results">
                    <img src={this.props.image1} alt="item1" id="item-1"/>
                    <img src={this.props.image2} alt="item2" id="item-2" />

@@ -17,15 +17,14 @@ export default function AboutApp() {
         </p>
         <p>
             This is a fan-made app from a long time lover of the game.
-            I am not affiliated with HiRez, nor do I own or monetize any of their game assets. 
+            I am not affiliated with HiRez, nor do I own any of their game assets. You can apply to use their API for both SMITE and Paladins 
+            <a 
+            href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/smite-api-developer-guide.pdf">
+            here</a>.
             <br />
             Check out the game <a href="https://www.smitegame.com/">here</a> 
             if you want to learn more about it.
             <br />
-            Check out their API for both SMITE and Paladins 
-            <a 
-            href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/smite-api-developer-guide.pdf">
-            here</a>.
         </p>
         </div>
     );
