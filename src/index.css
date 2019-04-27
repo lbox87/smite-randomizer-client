@@ -35,7 +35,7 @@ code {
   margin-right: 5px;
 }
 
-#item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
+.item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
   height: 75px;
   width: 75px;
 }
