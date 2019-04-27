@@ -1,17 +1,21 @@
 
 
-.dashboard-protected-data{
+/* .dashboard-protected-data{ */
     /* position: fixed; */
-}
+/* } */
 
 .myBuilds {
     overflow: auto;
-    text-align: center;
-    height: 550px
+    /* text-align: center; */
+    height: 550px;
+
+    
 }
 
 ul {
     list-style: none;
+    width: 70%;
+    margin: auto;
 }
 
 ::-webkit-scrollbar {

@@ -41,9 +41,9 @@ export class SavedBuildsPage extends React.Component {
                     {/* <p>Click Edit Build to re-roll items in your build.</p> */}
                     <p>Click Delete Build to remove it from your list.</p>
                     <div className="myBuilds">
-                    <ul>
-                        {myBuilds}
-                    </ul>
+                        <ul>
+                            {myBuilds}
+                        </ul>
                     </div>
                 </div>
             </div>
