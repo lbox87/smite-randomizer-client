@@ -4,7 +4,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import SavedBuilds from './saved-builds';
 import './saved-builds.css';
 
 export class SavedBuildsPage extends React.Component {
@@ -41,9 +40,11 @@ export class SavedBuildsPage extends React.Component {
                     <h2>Your Saved Builds</h2>
                     {/* <p>Click Edit Build to re-roll items in your build.</p> */}
                     <p>Click Delete Build to remove it from your list.</p>
-                    <ul className="myBuilds">
+                    <div className="myBuilds">
+                    <ul>
                         {myBuilds}
                     </ul>
+                    </div>
                 </div>
             </div>
         );

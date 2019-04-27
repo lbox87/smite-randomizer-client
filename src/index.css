@@ -54,8 +54,8 @@ code {
 }
 
 .item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
 }
 
 @media screen and (max-width: 640px) {
@@ -72,16 +72,16 @@ code {
   }
 }
 
-/* @media screen and (max-width: 0px) {
+@media screen and (max-width: 420px) {
   .item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
   }
   .god-image {
-    height: 67px;
-    width: 67px;
+    height: 45px;
+    width: 45px;
   }
   body{
     font-size: 10pt
   }
-} */
+}

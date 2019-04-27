@@ -1,3 +1,31 @@
-.myBuilds {
-    list-style: none
+
+
+.dashboard-protected-data{
+    /* position: fixed; */
 }
+
+.myBuilds {
+    overflow: auto;
+    text-align: center;
+    height: 550px
+}
+
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
