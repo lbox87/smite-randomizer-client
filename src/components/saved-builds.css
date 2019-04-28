@@ -18,6 +18,32 @@ ul {
     margin: auto;
 }
 
+li {
+  border: 1px solid #ffb31a;
+  border-radius: 10px;
+  margin-bottom: 5px
+}
+.god-name{
+  margin: 0;
+  margin-left: 10px
+}
+
+.full-build {
+  margin-left: 5%
+}
+
+.buttons{
+  /* height: 15px;
+  width: 30px */
+  margin-left: 10px;
+  margin-bottom: 5px
+}
+
+.dashboard-username{
+  width: 68%;
+  margin: auto
+}
+
 ::-webkit-scrollbar {
     width: 8px;
   }
@@ -32,4 +58,8 @@ ul {
   
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+  .build{
+    flex-direction: row
   }

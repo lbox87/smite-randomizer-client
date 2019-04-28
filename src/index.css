@@ -31,23 +31,19 @@ code {
     monospace;
 }
 
-
-
 .container {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-/* * {
-  border: solid black .5px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-} */
-
 .link {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+img{
+  margin: 10px 2px 2px 2px
 }
 
 .god-image {
@@ -59,13 +55,19 @@ code {
   height: 80px;
   width: 80px;
 }
-.item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
+#item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
   height:80px;
   width:80px;
 }
 
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
+  height:80px;
+  width:80px;
+}
+
+
 @media screen and (max-width: 640px) {
-  .item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
+  .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
     height: 50px;
     width: 50px;
   }
@@ -85,7 +87,7 @@ code {
 }
 
 @media screen and (max-width: 420px) {
-  .item, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
+  .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, #item-1, #item-2, #item-3, #item-4, #item-5, #item-6 {
     height: 45px;
     width: 45px;
   }
