@@ -8,19 +8,12 @@ import RandomizePage from './randomize-page';
 import GodResultPage from './god-result-page';
 import SavedBuildsPage from './saved-builds-page';
 
-// import './app.css';
-
 export default function App() {
     return (
         <Router>
         <div>
             <Header />
             <main role="main">
-            {/* <LandingPage />
-            <RegistrationPage />
-            <RandomizePage />
-            <GodResultPage />
-            <SavedBuildsPage /> */}
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/registration" component={RegistrationPage} />
             <Route exact path="/randomize" component={RandomizePage} />

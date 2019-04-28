@@ -1,30 +1,9 @@
-// import React from 'react';
-
-// // import './login-form.css';
-
-// export default function LoginForm() {
-//     return (
-//         <div>
-//             <label for="username">Username</label>
-//             <div className="form-input username">
-//                 <input type="text" name="username" id="username" />
-//             </div>
-
-//             <label for="password">Password</label>
-//             <div className="form-input password">
-//                 <input type="password" name="password" id="password" />
-//             </div>
-
-//             <button type="submit" className="login-button">Log In</button>
-//         </div>
-//     );
-// }
-
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+// import './login-form.css';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
