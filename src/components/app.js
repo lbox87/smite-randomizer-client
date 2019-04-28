@@ -7,6 +7,7 @@ import RegistrationPage from './registration-page';
 import RandomizePage from './randomize-page';
 import GodResultPage from './god-result-page';
 import SavedBuildsPage from './saved-builds-page';
+import './app.css';
 
 export default function App() {
     return (
@@ -14,11 +15,13 @@ export default function App() {
         <div>
             <Header />
             <main role="main">
+            <div className="main-image">
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/registration" component={RegistrationPage} />
             <Route exact path="/randomize" component={RandomizePage} />
             <Route exact path="/results" component={GodResultPage} />
             <Route exact path="/mybuilds" component={SavedBuildsPage} />
+            </div>
             </main>
         </div>
         </Router>

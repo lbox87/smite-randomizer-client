@@ -15,9 +15,9 @@ nav{
   
 .header-image::after {
     content: "";
-    background: url("../images/photo-1472145246862-b24cf25c4a36\ \(1\).jpg");
-    background-position-y: 400px;
-    opacity: 0.2;
+    background: url("../images/photo-1537908829143-c49accec9f80.jpg");
+    background-position-y: -325px;
+    opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
