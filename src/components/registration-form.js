@@ -1,34 +1,3 @@
-// import React from 'react';
-
-// // import './login-form.css';
-
-// export default function RegistrationForm() {
-//     return (
-//         <div>
-//             <form className="registration-form">
-
-//             <label htmlFor="username">Username</label>
-//             <div className="form-input">
-//                 <input type="text" name="username" id="username" />
-//             </div>
-
-//             <label htmlFor="password">Password</label>
-//             <div className="form-input">
-//                 <input type="password" name="password" id="password" />
-//             </div>
-
-//             <label htmlFor="passwordConfirm">Confirm password</label>
-//             <div className="form-input">
-//                 <input type="password" name="passwordConfirm" id="passwordConfirm" />
-//             </div>
-
-//             <button type="submit" className="register-button">Register</button>
-
-//             </form>
-//         </div>
-//     );
-// }
-
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';

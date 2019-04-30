@@ -2,8 +2,6 @@ import React from 'react';
 import GodResultPage from './god-result-page';
 import { connect } from 'react-redux';
 import {toggleGod} from '../actions/actions';
-import { authError } from '../actions/auth';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
 // import './randomize-god-form.css';
 

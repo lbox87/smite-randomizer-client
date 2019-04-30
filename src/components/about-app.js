@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './about-app.css';
 
 export default function AboutApp() {
@@ -10,8 +9,7 @@ export default function AboutApp() {
             SMITE God Randomizer is a companion app to HiRez's video game "SMITE" that
             allows you to easily randomize any God from the game's roster.
             You can filter out any classes you do not desire to be part of the randomization,
-            and once the God is provided you may opt to random again.
-            You may also random the God's item build, and if you create a profile,
+            and once the God is provided, you can also random the God's item build. If you create a profile,
             you will be able to save and revisit your favorite builds!
             Log in and let's get random!
         </p>
@@ -20,9 +18,7 @@ export default function AboutApp() {
             I am not affiliated with HiRez, nor do I own any of their game assets. 
             You can apply to use their API for both SMITE and Paladins <a 
             href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/smite-api-developer-guide.pdf">here</a>.
-            <br />
             Check out the game <a href="https://www.smitegame.com/">here</a> if you want to learn more about it.
-            <br />
         </p>
         </div>
     );

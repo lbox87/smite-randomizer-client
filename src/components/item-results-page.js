@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 const {API_BASE_URL} = require('./config');
-// import './landing-page.css';
+// import './item-results-page.css';
 
 export class ItemResultsPage extends React.Component {
     constructor(props) {
@@ -44,7 +44,6 @@ export class ItemResultsPage extends React.Component {
         })
         .then(response => {
             console.log(response.message);
-            // alert(response.message);
             this.setState( {saved: response.message})
           })
       }

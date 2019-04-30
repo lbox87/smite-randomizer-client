@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ItemResultsPage from './item-results-page';
 const {API_BASE_URL} = require('./config');
-
-// import './landing-page.css';
+// import './god-result-page.css';
 
 export default class GodResultPage extends React.Component {
     constructor(props) {
@@ -77,4 +76,3 @@ render() {
     );
 }
 }
-
