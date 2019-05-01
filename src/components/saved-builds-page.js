@@ -10,6 +10,20 @@ export class SavedBuildsPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
+    constructor(props) {
+        super(props);
+        this.state = {
+            click: true,
+        };
+        this.toggleChangeClick = this.toggleChangeClick.bind(this);
+    }
+    toggleChangeClick(){
+    // this.setState({
+    //     click: !this.state.click
+    // })
+    // return "hello"
+    this.props.dispatch(fetchProtectedData())
+}
 
     render() {
         console.log(this.props.protectedData[0])
@@ -27,7 +41,7 @@ export class SavedBuildsPage extends React.Component {
                         <img src={build.image6} className="item-6" />
                     </div>
                     <div className="buttons">
-                        <SavedBuildsButtons id={build.id} />
+                        <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick}/>
                     </div>
                 </div>
             </li>

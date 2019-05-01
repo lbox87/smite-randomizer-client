@@ -17,15 +17,12 @@ export default class SavedBuildsButtons extends React.Component {
             body: JSON.stringify(buildDelete),
             headers: { "Content-Type": "application/json" },
         })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-            })
-            .then(response =>
-
-                this.setState({ deleteConfirmed: response.message })
-            )
+            // .then(response => {
+            //     if (response.ok) {
+            //         return response.json();
+            //     }
+            // })
+            .then(  this.props.toggleClick  )
     }
 
     render() {
