@@ -13,7 +13,12 @@ export default class SavedBuildsFrame extends React.Component {
 
     render() {
         return (
-            <div className="build-frame container">
+            <div className="full container">
+                <div className="god-name">
+                    <p className="god-name">{this.props.god}</p>
+                </div>
+                <div className="build-frame container">
+                    
                 <div className="group1">
                     <img src={this.props.image} className="god-image-build" />
                 </div>
@@ -29,6 +34,7 @@ export default class SavedBuildsFrame extends React.Component {
                         <img src={this.props.image6} className="item" />
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

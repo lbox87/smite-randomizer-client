@@ -1,6 +1,9 @@
 .build-frame{
     flex-direction: row;
 }
+.full{
+    flex-direction: column;
+}
 
 .god-image-build{
     height: 150px;
@@ -10,6 +13,14 @@
 .item {
     height: 68px;
     width: 68px
+}
+
+.group2{
+    min-width: 220px;
+}
+
+.god-name{
+    align-self: center
 }
 
 @media screen and (max-width: 640px) {
@@ -22,6 +33,10 @@
         height: 43px;
         width: 43px
     }
+
+    .group2{
+        min-width: 150px;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -33,5 +48,9 @@
     .item {
         height: 35px;
         width: 35px
+    }
+
+    .group2{
+        min-width: 120px;
     }
 }

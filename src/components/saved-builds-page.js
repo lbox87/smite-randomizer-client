@@ -18,21 +18,21 @@ export class SavedBuildsPage extends React.Component {
         };
         this.toggleChangeClick = this.toggleChangeClick.bind(this);
     }
-    toggleChangeClick(){
-    this.props.dispatch(fetchProtectedData())
-}
+    toggleChangeClick() {
+        this.props.dispatch(fetchProtectedData())
+    }
 
     render() {
         console.log(this.props.protectedData[0])
         const myBuilds = this.props.protectedData.map((build, index) =>
             <li key={index}>
                 <div className="build">
-                    <p className="god-name">{build.god}</p>
                     <div className="full-build">
-                        <SavedBuildsFrame image={build.image} image1={build.image1}image2={build.image2}image3={build.image3}image4={build.image4}image5={build.image5}image6={build.image6}/>
-                    </div>
-                    <div className="buttons">
-                        <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick}/>
+                        <SavedBuildsFrame god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
+
+                        <div className="buttons">
+                            <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick} />
+                        </div>
                     </div>
                 </div>
             </li>
