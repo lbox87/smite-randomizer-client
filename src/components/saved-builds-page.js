@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
 import SavedBuildsButtons from './saved-builds-buttons';
+import SavedBuildsFrame from './saved-builds-frame';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
-import './saved-builds.css';
+import './saved-builds-page.css';
 
 export class SavedBuildsPage extends React.Component {
     componentDidMount() {
@@ -18,10 +19,6 @@ export class SavedBuildsPage extends React.Component {
         this.toggleChangeClick = this.toggleChangeClick.bind(this);
     }
     toggleChangeClick(){
-    // this.setState({
-    //     click: !this.state.click
-    // })
-    // return "hello"
     this.props.dispatch(fetchProtectedData())
 }
 
@@ -32,13 +29,7 @@ export class SavedBuildsPage extends React.Component {
                 <div className="build">
                     <p className="god-name">{build.god}</p>
                     <div className="full-build">
-                        <img src={build.image} className="god-image-build" />
-                        <img src={build.image1} className="item-1" />
-                        <img src={build.image2} className="item-2" />
-                        <img src={build.image3} className="item-3" />
-                        <img src={build.image4} className="item-4" />
-                        <img src={build.image5} className="item-5" />
-                        <img src={build.image6} className="item-6" />
+                        <SavedBuildsFrame image={build.image} image1={build.image1}image2={build.image2}image3={build.image3}image4={build.image4}image5={build.image5}image6={build.image6}/>
                     </div>
                     <div className="buttons">
                         <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick}/>
