@@ -50,7 +50,7 @@ export class SavedBuildsPage extends React.Component {
                 <div className="dashboard-username">
                     <h2 className="title">Your Saved Builds</h2>
                     <span>You are logged in as </span><span id="user">{this.props.currentUser.username}</span>
-                    {/* <p>Click Edit Build to re-roll items in your build.</p> */}
+                    <p>Click Edit Build to re-roll items in your build.</p>
                     <p>Click Delete Build to remove it from your list.</p>
                 </div>
                 <div className="dashboard-protected-data">

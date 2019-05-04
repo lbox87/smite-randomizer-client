@@ -1,4 +1,5 @@
 import React from 'react';
+import './saved-builds-buttons.css';
 const { API_BASE_URL } = require('./config');
 
 export default class SavedBuildsButtons extends React.Component {
@@ -7,7 +8,7 @@ export default class SavedBuildsButtons extends React.Component {
         this.state = { deleteConfirmed: "" }
     }
 
-    onClick = (event) => {
+    onClickDelete = (event) => {
         event.preventDefault();
         let buildDelete = {
             build: this.props.id,
@@ -28,8 +29,8 @@ export default class SavedBuildsButtons extends React.Component {
     render() {
         return (
             <div className="god-button-options">
-                {/* <button type="button" className="edit-build-button"> Edit Build </button> */}
-                <button id={this.props.id} type="button" className="delete-build-button" onClick={this.onClick}> Delete Build </button>
+                <button id={this.props.id} type="button" className="edit-build-button"> Edit Build </button>
+                <button id={this.props.id} type="button" className="delete-build-button" onClick={this.onClickDelete}> Delete Build </button>
             </div>
         );
     }
