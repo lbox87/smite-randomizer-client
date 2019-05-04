@@ -48,7 +48,11 @@ li {
   /* width: 68%; */
   margin: auto;
   text-align: center;
-  margin-right: 12px
+  margin-right: 12px;
+}
+
+.title{
+  margin-top: 0px
 }
 
 ::-webkit-scrollbar {

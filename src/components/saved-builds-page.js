@@ -41,14 +41,14 @@ export class SavedBuildsPage extends React.Component {
         if (myBuilds.length === 0) {
             return (
                 <div className="dashboard-username">
-                    <p>You do not have any saved builds yet! Get started<Link to="/randomize" className='link'>here!</Link></p>
+                    <p className="title">You do not have any saved builds yet! Get started<Link to="/randomize" className='link'>here!</Link></p>
                 </div>
             )
         }
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    <h2>Your Saved Builds</h2>
+                    <h2 className="title">Your Saved Builds</h2>
                     <span>You are logged in as </span><span id="user">{this.props.currentUser.username}</span>
                     {/* <p>Click Edit Build to re-roll items in your build.</p> */}
                     <p>Click Delete Build to remove it from your list.</p>
