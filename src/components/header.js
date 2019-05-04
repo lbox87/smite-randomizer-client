@@ -11,7 +11,7 @@ export function Header(props) {
                     <h1 className="title">SMITE God Randomizer</h1>
                     <nav>
                         <div className='links-top-wrapper'>
-                            <Link to="/randomize" className='link'>Roll a New God</Link>
+                            <Link to="/randomize" className='link'>Random New God</Link>
                             <Link to="/mybuilds" className='link'>My Saved Builds</Link>
                         </div>
                     </nav>

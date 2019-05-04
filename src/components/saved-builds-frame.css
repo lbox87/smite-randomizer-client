@@ -3,6 +3,9 @@
 }
 .full{
     flex-direction: column;
+    background-image: url("../images/photo-1537908829143-c49accec9f80.jpg");
+    background-size: 100%;
+    border: 1px solid black
 }
 
 .god-image-build{
