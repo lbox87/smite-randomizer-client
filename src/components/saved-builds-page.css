@@ -45,8 +45,10 @@ li {
 }
 
 .dashboard-username{
-  width: 68%;
-  margin: auto
+  /* width: 68%; */
+  margin: auto;
+  text-align: center;
+  margin-right: 12px
 }
 
 ::-webkit-scrollbar {
