@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SavedBuildsButtons from './saved-builds-buttons';
 import SavedBuildsFrame from './saved-builds-frame';
+import SavedBuildsEdit from './saved-builds-edit';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
 import './saved-builds-page.css';
@@ -14,12 +15,25 @@ export class SavedBuildsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            click: true,
+            edit: false,
+            currentEdit: ""
         };
-        this.toggleChangeClick = this.toggleChangeClick.bind(this);
+        this.renderParent = this.renderParent.bind(this);
+        this.editParent = this.editParent.bind(this);
     }
-    toggleChangeClick() {
+    renderParent() {
         this.props.dispatch(fetchProtectedData())
+    }
+
+    onClick = (event) => {
+        event.preventDefault();
+        this.setState( {edit: true})
+        this.setState( {currentEdit: this.build.id} )
+    }
+
+    editParent() {
+        this.setState( {edit: true} )
+        this.setState( {currentEdit: "test"} )
     }
 
     render() {
@@ -28,10 +42,12 @@ export class SavedBuildsPage extends React.Component {
             <li key={index}>
                 <div className="build">
                     <div className="full-build">
-                        <SavedBuildsFrame god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
+                        <SavedBuildsFrame id={build.id} god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
 
                         <div className="buttons">
-                            <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick} />
+                            <SavedBuildsButtons id={build.id} toggleClick={this.renderParent} />
+                            <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/>
+                            {/* <button onClick={this.onClick} id={build.id}>Edit Build2</button> */}
                         </div>
                     </div>
                 </div>
@@ -45,6 +61,11 @@ export class SavedBuildsPage extends React.Component {
                 </div>
             )
         }
+        // else if (this.state.edit === true) {
+        //     return (
+        //         <SavedBuildsEdit toggleEdit={this.renderParent}/>
+        //     )
+        // }
         return (
             <div className="dashboard">
                 <div className="dashboard-username">

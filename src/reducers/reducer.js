@@ -7,7 +7,8 @@ const initialState = {
     Hunter: true,
     Mage: true,
     Warrior: true,
-
+    editGod: "",
+    editID: "",
 }
 
 export default (state = initialState, action) => {

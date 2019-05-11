@@ -2,7 +2,7 @@ import React from 'react';
 import './saved-builds-buttons.css';
 const { API_BASE_URL } = require('./config');
 
-export default class SavedBuildsButtons extends React.Component {
+export default class SavedBuildsEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,6 +25,7 @@ export default class SavedBuildsButtons extends React.Component {
 
     onClickEdit = (event) => {
         event.preventDefault();
+        console.log(this.props.id)
         let buildEdit = {
             build: this.props.id,
         }
@@ -55,26 +56,20 @@ export default class SavedBuildsButtons extends React.Component {
                 this.setState({ editImage6: response.build.image6 })
                 console.log(this.state)
             })
-    }
-
-    onClickDelete = (event) => {
-        event.preventDefault();
-        let buildDelete = {
-            build: this.props.id,
-        }
-        fetch(API_BASE_URL + 'delete/' + this.props.id, {
-            method: "DELETE",
-            body: JSON.stringify(buildDelete),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then(this.props.toggleClick)
+            .then(this.props.toggleEdit)
     }
 
     render() {
+        // if (this.state.editGod !== "") {
+        //     return (
+        //         <div className="editBuild">
+        //             <p className="god">hi</p>
+        //         </div>
+        //     )
+        // }
         return (
             <div className="god-button-options">
-                {/* <button id={this.props.id} type="button" className="edit-build-button" onClick={this.onClickEdit}> Edit Build </button> */}
-                <button id={this.props.id} type="button" className="delete-build-button" onClick={this.onClickDelete}> Delete Build </button>
+                <button id={this.props.id} type="button" className="edit-build-button" onClick={this.onClickEdit}> Edit Build </button>
             </div>
         );
     }
