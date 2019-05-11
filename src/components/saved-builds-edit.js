@@ -1,8 +1,10 @@
 import React from 'react';
+import EditGodPage from './edit-god-page';
+import {Link, Redirect} from 'react-router-dom';
 import './saved-builds-buttons.css';
 const { API_BASE_URL } = require('./config');
 
-export default class SavedBuildsButtons extends React.Component {
+export default class SavedBuildsEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -57,24 +59,23 @@ export default class SavedBuildsButtons extends React.Component {
             })
     }
 
-    onClickDelete = (event) => {
-        event.preventDefault();
-        let buildDelete = {
-            build: this.props.id,
-        }
-        fetch(API_BASE_URL + 'delete/' + this.props.id, {
-            method: "DELETE",
-            body: JSON.stringify(buildDelete),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then(this.props.toggleClick)
-    }
-
     render() {
+        // if (this.state.editGod !== "") {
+        //     return (
+        //         <EditGodPage />
+        //     )
+        // }
+        if (this.state.editGod !== "") {
+            return (
+                <div>
+            <EditGodPage god={this.state.editGod}/>
+            {/* <Redirect to="/editgod" /> */}
+            </div>
+            );
+        }
         return (
             <div className="god-button-options">
                 <button id={this.props.id} type="button" className="edit-build-button" onClick={this.onClickEdit}> Edit Build </button>
-                <button id={this.props.id} type="button" className="delete-build-button" onClick={this.onClickDelete}> Delete Build </button>
             </div>
         );
     }

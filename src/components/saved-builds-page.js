@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
-import SavedBuildsButtons from './saved-builds-buttons';
+import SavedBuildsEdit from './saved-builds-edit';
+import SavedBuildsDelete from './saved-builds-delete';
 import SavedBuildsFrame from './saved-builds-frame';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
@@ -31,7 +32,8 @@ export class SavedBuildsPage extends React.Component {
                         <SavedBuildsFrame god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
 
                         <div className="buttons">
-                            <SavedBuildsButtons id={build.id} toggleClick={this.toggleChangeClick} />
+                            <SavedBuildsEdit id={build.id} toggleClick={this.toggleChangeClick} />
+                            <SavedBuildsDelete id={build.id} toggleClick={this.toggleChangeClick} />
                         </div>
                     </div>
                 </div>

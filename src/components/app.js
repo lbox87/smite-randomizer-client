@@ -7,6 +7,7 @@ import RegistrationPage from './registration-page';
 import RandomizePage from './randomize-page';
 import GodResultPage from './god-result-page';
 import SavedBuildsPage from './saved-builds-page';
+import EditGodPage from './edit-god-page';
 import './app.css';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
                         <Route exact path="/randomize" component={RandomizePage} />
                         <Route exact path="/results" component={GodResultPage} />
                         <Route exact path="/mybuilds" component={SavedBuildsPage} />
+                        <Route exact path="/editgod" component={EditGodPage} />
                     </div>
             </main>
         </div>
