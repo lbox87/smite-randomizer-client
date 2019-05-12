@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import SavedBuildsButtons from './saved-builds-buttons';
 import SavedBuildsFrame from './saved-builds-frame';
 import SavedBuildsEdit from './saved-builds-edit';
+import {toggleEdit} from '../actions/actions';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
 import './saved-builds-page.css';
@@ -28,13 +29,17 @@ export class SavedBuildsPage extends React.Component {
     onClick = (event) => {
         event.preventDefault();
         this.setState( {edit: true})
-        this.setState( {currentEdit: this.build.id} )
+        // this.setState( {currentEdit: this.build.id} )
     }
 
     editParent() {
         this.setState( {edit: true} )
         this.setState( {currentEdit: "test"} )
     }
+
+    setBuildEdit = edit => () => {
+        this.props.dispatch(toggleEdit(edit))
+      }
 
     render() {
         console.log(this.props.protectedData[0])
@@ -46,8 +51,8 @@ export class SavedBuildsPage extends React.Component {
 
                         <div className="buttons">
                             <SavedBuildsButtons id={build.id} toggleClick={this.renderParent} />
-                            <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/>
-                            {/* <button onClick={this.onClick} id={build.id}>Edit Build2</button> */}
+                            {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
+                            <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button>
                         </div>
                     </div>
                 </div>
@@ -96,7 +101,7 @@ export class SavedBuildsPage extends React.Component {
 // };
 
 const mapStateToProps = state => (
-    {
+    {   ...state.reducer,
         currentUser: state.auth.currentUser,
         protectedData: state.protectedData.data
     });
