@@ -33,3 +33,23 @@ export const fetchProtectedData = () => (dispatch, getState) => {
             dispatch(fetchProtectedDataError(err));
         });
 };
+export const fetchProtectedDataEdit = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const build = {build: getState().reducer.editID};
+    console.log(build);
+    return fetch(`${API_BASE_URL}edit`, {
+        method: 'POST',
+        headers: {
+            // Provide our auth token as credentials
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(build)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
