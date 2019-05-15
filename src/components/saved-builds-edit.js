@@ -63,7 +63,7 @@ export class SavedBuildsEdit extends React.Component {
                 // console.log(this.state)
             })
             // .then(this.props.dispath(toggleEditId(this.props.id)))
-            // .then(this.props.toggleEdit)
+            .then(this.props.toggleEdit)
     }
 
     render() {

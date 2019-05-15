@@ -10,87 +10,52 @@ export class SavedBuildsEdit3 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // editGod: "",
-            // editGodImage: "",
-            // editItem1: "",
-            // editItem2: "",
-            // editItem3: "",
-            // editItem4: "",
-            // editItem5: "",
-            // editItem6: "",
-            // editImage1: "",
-            // editImage2: "",
-            // editImage3: "",
-            // editImage4: "",
-            // editImage5: "",
-            // editImage6: ""
             clean: "up"
         }
     }
 
     onClickEdit = (event) => {
         event.preventDefault();
-        console.log(this.props.id)
-        let buildEdit = {
-            build: this.props.id,
-        }
-        fetch(API_BASE_URL + 'find/' + this.props.id, {
-            method: "POST",
-            body: JSON.stringify(buildEdit),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-            })
-            .then(response => {
-                // this.setState({ editGod: response.build.god })
-                // this.setState({ editGodImage: response.build.image })
-                // this.setState({ editItem1: response.build.item1 })
-                // this.setState({ editItem2: response.build.item2 })
-                // this.setState({ editItem3: response.build.item3 })
-                // this.setState({ editItem4: response.build.item4 })
-                // this.setState({ editItem5: response.build.item5 })
-                // this.setState({ editItem6: response.build.item6 })
-                // this.setState({ editImage1: response.build.image1 })
-                // this.setState({ editImage2: response.build.image2 })
-                // this.setState({ editImage3: response.build.image3 })
-                // this.setState({ editImage4: response.build.image4 })
-                // this.setState({ editImage5: response.build.image5 })
-                // this.setState({ editImage6: response.build.image6 })
-                this.props.dispatch(toggleEditGod(response.build.god))
-                this.props.dispatch(toggleEditImage(response.build.image))
-                this.props.dispatch(toggleEditImage1(response.build.image1))
-                this.props.dispatch(toggleEditImage2(response.build.image2))
-                this.props.dispatch(toggleEditImage3(response.build.image3))
-                this.props.dispatch(toggleEditImage4(response.build.image4))
-                this.props.dispatch(toggleEditImage5(response.build.image5))
-                this.props.dispatch(toggleEditImage6(response.build.image6))
-                this.props.dispatch(toggleEditItem1(response.build.item1))
-                this.props.dispatch(toggleEditItem2(response.build.item2))
-                this.props.dispatch(toggleEditItem3(response.build.item3))
-                this.props.dispatch(toggleEditItem4(response.build.item4))
-                this.props.dispatch(toggleEditItem5(response.build.item5))
-                this.props.dispatch(toggleEditItem6(response.build.item6))
-                this.props.dispatch(toggleEditId(this.props.id))
-                // console.log(this.state)
-            })
-            // .then(this.props.dispath(toggleEditId(this.props.id)))
-            // .then(this.props.toggleEdit)
+        
     }
 
     render() {
-        // if (this.state.editGod !== "") {
-        //     return (
-        //         <div className="editBuild">
-        //             <p className="god">hi</p>
-        //         </div>
-        //     )
-        // }
+        // console.log(this.props.protectedData[0])
+        const myBuilds = [
+                <div className="build">
+                    <div className="full-build">
+                        <p>{this.props.editGod}</p>
+                        <img src={this.props.editImage} alt="item1" id="item-1"/>
+                        <img src={this.props.editImage1} alt="item1" id="item-1"/>
+                        <img src={this.props.editImage2} alt="item2" id="item-2" />
+                        <img src={this.props.editImage3} alt="item3" id="item-3" />
+                        <img src={this.props.editImage4} alt="item4" id="item-4" />
+                        <img src={this.props.editImage5} alt="item5" id="item-5" />
+                        <img src={this.props.editImage6} alt="item6" id="item-6" /> 
+                    </div>
+                    {/* <div>
+                        <button onClick={this.onClick}>Save Build</button>
+                        <button onClick={this.setBuildEdit("")}>Cancel</button>
+                    </div> */}
+                </div>
+            ]
+        console.log(myBuilds);
         return (
-            <div className="god-button-options">
-                <button id={this.props.id} type="button" className="edit-build-button" onClick={this.onClickEdit}> Edit Build </button>
+            <div className="dashboard">
+                <div className="dashboard-username">
+                    <h2 className="title">Your Saved Builds</h2>
+                    <span>You are logged in as </span><span id="user">{this.props.currentUser.username}</span>
+                    <p>Click an item to re-roll in your build.</p>
+                    <p>Click Save Build to update it in your list.</p>
+                    <p>Click Cancel to go back to your builds.</p>
+                </div>
+                <div className="dashboard-protected-data">
+                    <div className="myBuilds">
+                        <ul>
+                            {myBuilds}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }

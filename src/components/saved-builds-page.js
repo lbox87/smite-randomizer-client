@@ -5,6 +5,7 @@ import SavedBuildsButtons from './saved-builds-buttons';
 import SavedBuildsFrame from './saved-builds-frame';
 import SavedBuildsEdit from './saved-builds-edit';
 import SavedBuildsEdit2 from './saved-builds-edit2';
+import SavedBuildsEdit3 from './saved-builds-edit3';
 // import {toggleEdit} from '../actions/actions';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
@@ -54,7 +55,7 @@ export class SavedBuildsPage extends React.Component {
                         <div className="buttons">
                             <SavedBuildsButtons id={build.id} toggleClick={this.renderParent} />
                             {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
-                            <SavedBuildsEdit id={build.id} />
+                            <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent}/>
                             {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
                         </div>
                     </div>
@@ -69,11 +70,11 @@ export class SavedBuildsPage extends React.Component {
                 </div>
             )
         }
-        // else if (this.props.editID === "") {
-        //     return (
-        //         <SavedBuildsEdit2/>
-        //     )
-        // }
+        else if (this.state.edit === true) {
+            return (
+                <SavedBuildsEdit3/>
+            )
+        }
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
