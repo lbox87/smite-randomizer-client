@@ -14,9 +14,25 @@ export class SavedBuildsEdit3 extends React.Component {
         }
     }
 
-    onClickEdit = (event) => {
+    onClickReroll1 = (event) => {
         event.preventDefault();
-        
+        let god = {god: this.props.editGod}
+
+        fetch(API_BASE_URL + 'items1', {
+          method: "POST",
+          body: JSON.stringify(god),
+          headers: { "Content-Type": "application/json" },
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+                }
+        })
+        .then(response => {
+            this.props.dispatch(toggleEditItem1(response.item.name))
+            this.props.dispatch(toggleEditImage1(response.item.image))
+            // console.log(response)
+            })
     }
 
     render() {
@@ -25,8 +41,8 @@ export class SavedBuildsEdit3 extends React.Component {
                 <div className="build">
                     <div className="full-build">
                         <p>{this.props.editGod}</p>
-                        <img src={this.props.editImage} alt="item1" id="item-1"/>
-                        <img src={this.props.editImage1} alt="item1" id="item-1"/>
+                        <img src={this.props.editImage} alt="god-image" id="god-image" />
+                        <img src={this.props.editImage1} alt="item1" id="item-1" onClick={this.onClickReroll1}/>
                         <img src={this.props.editImage2} alt="item2" id="item-2" />
                         <img src={this.props.editImage3} alt="item3" id="item-3" />
                         <img src={this.props.editImage4} alt="item4" id="item-4" />
