@@ -35,7 +35,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
 };
 export const fetchProtectedDataEdit = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    const build = {build: getState().reducer.editID};
+    const build = {build: getState().reducer.editId};
     console.log(build);
     return fetch(`${API_BASE_URL}edit`, {
         method: 'POST',

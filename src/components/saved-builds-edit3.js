@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import { fetchProtectedDataEdit } from '../actions/protected-data';
 const { API_BASE_URL } = require('./config');
 
-export class SavedBuildsEdit extends React.Component {
+export class SavedBuildsEdit3 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,6 +45,20 @@ export class SavedBuildsEdit extends React.Component {
                 }
             })
             .then(response => {
+                // this.setState({ editGod: response.build.god })
+                // this.setState({ editGodImage: response.build.image })
+                // this.setState({ editItem1: response.build.item1 })
+                // this.setState({ editItem2: response.build.item2 })
+                // this.setState({ editItem3: response.build.item3 })
+                // this.setState({ editItem4: response.build.item4 })
+                // this.setState({ editItem5: response.build.item5 })
+                // this.setState({ editItem6: response.build.item6 })
+                // this.setState({ editImage1: response.build.image1 })
+                // this.setState({ editImage2: response.build.image2 })
+                // this.setState({ editImage3: response.build.image3 })
+                // this.setState({ editImage4: response.build.image4 })
+                // this.setState({ editImage5: response.build.image5 })
+                // this.setState({ editImage6: response.build.image6 })
                 this.props.dispatch(toggleEditGod(response.build.god))
                 this.props.dispatch(toggleEditImage(response.build.image))
                 this.props.dispatch(toggleEditImage1(response.build.image1))
@@ -88,4 +102,4 @@ const mapStateToProps = state => (
         protectedData: state.protectedData.data
     });
 
-export default requiresLogin()(connect(mapStateToProps)(SavedBuildsEdit));
+export default requiresLogin()(connect(mapStateToProps)(SavedBuildsEdit3));

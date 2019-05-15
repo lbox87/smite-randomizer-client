@@ -3,7 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SavedBuildsButtons from './saved-builds-buttons';
 import SavedBuildsFrame from './saved-builds-frame';
-import {toggleEdit} from '../actions/actions';
+// import {toggleEdit} from '../actions/actions';
+
 import requiresLogin from './requires-login';
 import { fetchProtectedDataEdit } from '../actions/protected-data';
 import './saved-builds-page.css';
@@ -23,7 +24,7 @@ export class SavedBuildsEdit2 extends React.Component {
 onClick = () => this.props.toggleClick
 
     setBuildEdit = edit => () => {
-        this.props.dispatch(toggleEdit(edit))
+        // this.props.dispatch(toggleEdit(edit))
         // this.props.toggleClick
       }
 
