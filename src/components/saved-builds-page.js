@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
+import {toggleEditId } from '../actions/actions';
 import SavedBuildsButtons from './saved-builds-buttons';
 import SavedBuildsFrame from './saved-builds-frame';
 import SavedBuildsEdit from './saved-builds-edit';
@@ -19,24 +20,27 @@ export class SavedBuildsPage extends React.Component {
         super(props);
         this.state = {
             edit: false,
-            currentEdit: ""
+            currentEdit: this.props.editId
         };
         this.renderParent = this.renderParent.bind(this);
         this.editParent = this.editParent.bind(this);
     }
     renderParent() {
+        this.setState( {edit: !this.state.edit} )
         this.props.dispatch(fetchProtectedData())
     }
 
     onClick = (event) => {
         event.preventDefault();
-        this.setState( {edit: true})
+        this.setState( {edit: !this.state.edit})
         // this.setState( {currentEdit: this.build.id} )
     }
 
     editParent() {
-        this.setState( {edit: true} )
-        this.setState( {currentEdit: "test"} )
+        this.setState( {edit: !this.state.edit} )
+        // this.props.dispatch(toggleEditId(""))
+        // this.props.dispatch(fetchProtectedData())
+        // this.setState( {currentEdit: "test"} )
     }
 
     setBuildEdit = edit => () => {
@@ -55,7 +59,7 @@ export class SavedBuildsPage extends React.Component {
                         <div className="buttons">
                             <SavedBuildsButtons id={build.id} toggleClick={this.renderParent} />
                             {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
-                            <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent}/>
+                            <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent} />
                             {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
                         </div>
                     </div>
@@ -72,7 +76,7 @@ export class SavedBuildsPage extends React.Component {
         }
         else if (this.state.edit === true) {
             return (
-                <SavedBuildsEdit3/>
+                <SavedBuildsEdit3 toggleEdit={this.editParent} renderParent={this.renderParent}/>
             )
         }
         return (
