@@ -1,13 +1,11 @@
 import React from 'react';
-import EditGodPage from './edit-god-page';
-import './saved-builds-buttons.css';
+import './saved-builds-delete.css';
 const { API_BASE_URL } = require('./config');
 
-export default class SavedBuildsButtons extends React.Component {
+export default class SavedBuildsDelete extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editGod: "",
         }
     }
 

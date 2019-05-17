@@ -1,9 +1,13 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
-import SavedBuildsEdit from './saved-builds-edit';
+import {toggleEditId } from '../actions/actions';
 import SavedBuildsDelete from './saved-builds-delete';
 import SavedBuildsFrame from './saved-builds-frame';
+import SavedBuildsEdit from './saved-builds-edit';
+// import SavedBuildsEdit2 from './saved-builds-edit2';
+import SavedBuildsEditPage from './saved-builds-edit-page';
+// import {toggleEdit} from '../actions/actions';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
 import './saved-builds-page.css';
@@ -15,13 +19,40 @@ export class SavedBuildsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            click: true,
+            edit: false,
+            currentEdit: this.props.editId
         };
-        this.toggleChangeClick = this.toggleChangeClick.bind(this);
+        this.renderParent = this.renderParent.bind(this);
+        this.renderToggleParent = this.renderToggleParent.bind(this);
+        this.editParent = this.editParent.bind(this);
     }
-    toggleChangeClick() {
+    renderParent() {
+        // this.setState( {edit: !this.state.edit} )
         this.props.dispatch(fetchProtectedData())
     }
+
+        renderToggleParent() {
+        this.setState( {edit: !this.state.edit} )
+        this.props.dispatch(fetchProtectedData())
+    }
+
+    onClick = (event) => {
+        event.preventDefault();
+        this.setState( {edit: !this.state.edit})
+        // this.setState( {currentEdit: this.build.id} )
+    }
+
+    editParent() {
+        this.setState( {edit: !this.state.edit} )
+        // this.props.dispatch(toggleEditId(""))
+        // this.props.dispatch(fetchProtectedData())
+        // this.setState( {currentEdit: "test"} )
+    }
+
+    setBuildEdit = edit => () => {
+        // this.props.dispatch(toggleEdit(edit))
+        this.setState( {edit: true})
+      }
 
     render() {
         console.log(this.props.protectedData[0])
@@ -29,11 +60,13 @@ export class SavedBuildsPage extends React.Component {
             <li key={index}>
                 <div className="build">
                     <div className="full-build">
-                        <SavedBuildsFrame god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
+                        <SavedBuildsFrame id={build.id} god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
 
                         <div className="buttons">
-                            <SavedBuildsEdit id={build.id} toggleClick={this.toggleChangeClick} />
-                            <SavedBuildsDelete id={build.id} toggleClick={this.toggleChangeClick} />
+                            <SavedBuildsDelete id={build.id} toggleClick={this.renderParent} />
+                            {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
+                            <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent} />
+                            {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
                         </div>
                     </div>
                 </div>
@@ -45,6 +78,11 @@ export class SavedBuildsPage extends React.Component {
                 <div className="dashboard-username">
                     <p className="title">You do not have any saved builds yet! Get started<Link to="/randomize" className='link'>here!</Link></p>
                 </div>
+            )
+        }
+        else if (this.state.edit === true) {
+            return (
+                <SavedBuildsEditPage toggleEdit={this.editParent} renderParent={this.renderToggleParent}/>
             )
         }
         return (
@@ -77,7 +115,7 @@ export class SavedBuildsPage extends React.Component {
 // };
 
 const mapStateToProps = state => (
-    {
+    {   ...state.reducer,
         currentUser: state.auth.currentUser,
         protectedData: state.protectedData.data
     });

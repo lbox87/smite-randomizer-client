@@ -1,5 +1,7 @@
 import React from 'react';
+// import SavedBuildsButtons from './saved-builds-delete';
 import './saved-builds-frame.css';
+import SavedBuildsEdit from './saved-builds-edit';
 const { API_BASE_URL } = require('./config');
 
 
@@ -34,6 +36,9 @@ export default class SavedBuildsFrame extends React.Component {
                         <img src={this.props.image6} className="item" />
                     </div>
                 </div>
+                {/* <div>
+                    <SavedBuildsEdit id={this.props.id}/>
+                </div> */}
             </div>
             </div>
         );
