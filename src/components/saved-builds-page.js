@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
 import {toggleEditId } from '../actions/actions';
-import SavedBuildsButtons from './saved-builds-buttons';
+import SavedBuildsDelete from './saved-builds-delete';
 import SavedBuildsFrame from './saved-builds-frame';
 import SavedBuildsEdit from './saved-builds-edit';
-import SavedBuildsEdit2 from './saved-builds-edit2';
-import SavedBuildsEdit3 from './saved-builds-edit3';
+// import SavedBuildsEdit2 from './saved-builds-edit2';
+import SavedBuildsEditPage from './saved-builds-edit-page';
 // import {toggleEdit} from '../actions/actions';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
@@ -63,7 +63,7 @@ export class SavedBuildsPage extends React.Component {
                         <SavedBuildsFrame id={build.id} god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
 
                         <div className="buttons">
-                            <SavedBuildsButtons id={build.id} toggleClick={this.renderParent} />
+                            <SavedBuildsDelete id={build.id} toggleClick={this.renderParent} />
                             {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
                             <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent} />
                             {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
@@ -82,7 +82,7 @@ export class SavedBuildsPage extends React.Component {
         }
         else if (this.state.edit === true) {
             return (
-                <SavedBuildsEdit3 toggleEdit={this.editParent} renderParent={this.renderToggleParent}/>
+                <SavedBuildsEditPage toggleEdit={this.editParent} renderParent={this.renderToggleParent}/>
             )
         }
         return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {toggleEditImage,toggleEditGod,toggleEditId,toggleEditImage1,toggleEditImage2,toggleEditImage3,toggleEditImage4,toggleEditImage5,toggleEditImage6,toggleEditItem1,toggleEditItem2,toggleEditItem3,toggleEditItem4,toggleEditItem5,toggleEditItem6 } from '../actions/actions';
-import './saved-builds-buttons.css';
+// import './saved-builds-buttons.css';
 import requiresLogin from './requires-login';
 import { fetchProtectedDataEdit } from '../actions/protected-data';
 const { API_BASE_URL } = require('./config');
@@ -10,21 +10,6 @@ export class SavedBuildsEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // editGod: "",
-            // editGodImage: "",
-            // editItem1: "",
-            // editItem2: "",
-            // editItem3: "",
-            // editItem4: "",
-            // editItem5: "",
-            // editItem6: "",
-            // editImage1: "",
-            // editImage2: "",
-            // editImage3: "",
-            // editImage4: "",
-            // editImage5: "",
-            // editImage6: ""
-            clean: "up"
         }
     }
 
@@ -60,20 +45,11 @@ export class SavedBuildsEdit extends React.Component {
                 this.props.dispatch(toggleEditItem5(response.build.item5))
                 this.props.dispatch(toggleEditItem6(response.build.item6))
                 this.props.dispatch(toggleEditId(this.props.id))
-                // console.log(this.state)
             })
-            // .then(this.props.dispath(toggleEditId(this.props.id)))
             .then(this.props.toggleEdit)
     }
 
     render() {
-        // if (this.state.editGod !== "") {
-        //     return (
-        //         <div className="editBuild">
-        //             <p className="god">hi</p>
-        //         </div>
-        //     )
-        // }
         return (
             <div className="god-button-options">
                 <button id={this.props.id} type="button" className="edit-build-button" onClick={this.onClickEdit}> Edit Build </button>
