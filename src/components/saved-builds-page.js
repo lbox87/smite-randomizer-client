@@ -23,9 +23,15 @@ export class SavedBuildsPage extends React.Component {
             currentEdit: this.props.editId
         };
         this.renderParent = this.renderParent.bind(this);
+        this.renderToggleParent = this.renderToggleParent.bind(this);
         this.editParent = this.editParent.bind(this);
     }
     renderParent() {
+        // this.setState( {edit: !this.state.edit} )
+        this.props.dispatch(fetchProtectedData())
+    }
+
+        renderToggleParent() {
         this.setState( {edit: !this.state.edit} )
         this.props.dispatch(fetchProtectedData())
     }
@@ -76,7 +82,7 @@ export class SavedBuildsPage extends React.Component {
         }
         else if (this.state.edit === true) {
             return (
-                <SavedBuildsEdit3 toggleEdit={this.editParent} renderParent={this.renderParent}/>
+                <SavedBuildsEdit3 toggleEdit={this.editParent} renderParent={this.renderToggleParent}/>
             )
         }
         return (
