@@ -1,7 +1,8 @@
 .myBuilds {
     overflow: auto;
     /* text-align: center; */
-    height: 550px;
+    max-height: 380px;
+    /* border: 2px solid red */
 }
 
 ul {
@@ -51,8 +52,14 @@ li {
   margin-right: 12px;
 }
 
-.title{
-  margin-top: 0px
+.title-build{
+  margin-top: 0px;
+  font-size: 17px
+}
+
+.text-build{
+  margin-top: 0px;
+  font-size: 13px
 }
 
 ::-webkit-scrollbar {

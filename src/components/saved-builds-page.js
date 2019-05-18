@@ -76,7 +76,7 @@ export class SavedBuildsPage extends React.Component {
         if (myBuilds.length === 0) {
             return (
                 <div className="dashboard-username">
-                    <p className="title">You do not have any saved builds yet! Get started<Link to="/randomize" className='link'>here!</Link></p>
+                    <p className="title-build">You do not have any saved builds yet! Get started<Link to="/randomize" className='link'>here!</Link></p>
                 </div>
             )
         }
@@ -88,10 +88,9 @@ export class SavedBuildsPage extends React.Component {
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    <h2 className="title">Your Saved Builds</h2>
-                    <span>You are logged in as </span><span id="user">{this.props.currentUser.username}</span>
-                    <p>Click Edit Build to re-roll items in your build.</p>
-                    <p>Click Delete Build to remove it from your list.</p>
+                    <h2 className="title-build">You are logged in as {this.props.currentUser.username}.</h2>
+                    <p className="text-build">Click Edit Build to re-roll items in a build.</p>
+                    <p className="text-build">Click Delete Build to remove it from your list.</p>
                 </div>
                 <div className="dashboard-protected-data">
                     <div className="myBuilds">
