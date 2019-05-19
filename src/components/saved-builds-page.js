@@ -64,8 +64,10 @@ export class SavedBuildsPage extends React.Component {
 
                         <div className="buttons">
                             <SavedBuildsDelete id={build.id} toggleClick={this.renderParent} />
-                            {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
+                        </div>
+                        <div className="buttons">
                             <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent} />
+                            {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
                             {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
                         </div>
                     </div>

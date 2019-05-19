@@ -42,7 +42,8 @@ li {
   /* height: 15px;
   width: 30px */
   /* margin-left: 10px; */
-  margin-bottom: 5px
+  margin-bottom: 5px;
+  display: inline-block
 }
 
 .dashboard-username{

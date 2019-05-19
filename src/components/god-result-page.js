@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ItemResultsPage from './item-results-page';
+import './god-result-page.css';
 const {API_BASE_URL} = require('./config');
-// import './god-result-page.css';
+
 
 export default class GodResultPage extends React.Component {
     constructor(props) {
@@ -46,7 +47,7 @@ render() {
     if (this.state.item1 === "") {
         return (
             <div className=''>
-            <h2>You Randomed <span className="god-name-result">{this.props.god}</span></h2>
+            <h2 className="randomed-god-name">You Randomed <span className="god-name-result">{this.props.god}</span></h2>
             <img src={this.props.image} alt={this.props.god} className="god-image" />
             <div>
             <button className="randomize-build-button" onClick={this.onClick}>Random Build!</button>
@@ -56,7 +57,7 @@ render() {
       }
     return (
         <div className=''>
-            <h2>You Randomed <span className="god-name-result">{this.props.god}</span></h2>
+            <h2 className="randomed-god-name">You Randomed <span className="god-name-result">{this.props.god}</span></h2>
             <img src={this.props.image} alt={this.props.god} className="god-image" />
             <div>
             <button className="randomize-build-button" onClick={this.onClick}>Random Build!</button>
