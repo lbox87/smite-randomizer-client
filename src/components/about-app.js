@@ -7,15 +7,16 @@ export default function AboutApp() {
             <h2>Welcome to SMITE God Randomizer!</h2>
         <p>
             SMITE God Randomizer is a companion app to HiRez's video game "SMITE" that
-            allows you to easily randomize any God from the game's roster.
-            You can filter out any classes you do not desire to be part of the randomization,
-            and once the God is provided, you can also random the God's item build. If you create a profile,
-            you will be able to save and revisit your favorite builds!
-            Log in and let's get random!
+            allows you to randomize any God from the game's roster.
+            Once a God is randomed, you can also random the God's item build. If you create a profile,
+            you will be able to save and revisit your favorite builds! 
+
+        Click "Register" at the top if you don't have an account, or "Continue without log in" if you want to jump 
+        right into randomzing.
         </p>
         <p>
             This is a fan-made app from a long time lover of the game.
-            I am not affiliated with HiRez, nor do I own any of their game assets. 
+            I am not affiliated with HiRez and all images are assets belonging to HiRez. 
             You can apply to use their API for both SMITE and Paladins <a 
             href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/smite-api-developer-guide.pdf">here</a>.
             Check out the game <a href="https://www.smitegame.com/">here</a> if you want to learn more about it.

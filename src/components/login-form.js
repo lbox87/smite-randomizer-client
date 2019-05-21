@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import './login-form.css';
 
 export class LoginForm extends React.Component {
@@ -45,6 +46,9 @@ export class LoginForm extends React.Component {
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                {/* <div>
+                <Link to="/randomize" className='link'>Continue without log in</Link>
+                </div> */}
             </form>
         );
     }
