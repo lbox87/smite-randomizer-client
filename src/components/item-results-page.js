@@ -58,7 +58,7 @@ render() {
     ]
     if (this.props.currentUser == null) {
      return (
-        <div>
+        <div className="not-logged-in">
             {/* <p>Click an Item to re-roll it!</p> */}
             <div className="random-item-results">
                 {randomBuild}
@@ -69,7 +69,7 @@ render() {
     }
     else if (this.state.saved === "") {
         return (
-           <div>
+           <div className="unsaved-build">
                 {/* <p>Click an Item to re-roll it!</p> */}
                 <div className="random-item-results">
                     {randomBuild}
@@ -82,7 +82,7 @@ render() {
        }
        else {
         return (
-           <div>
+           <div classname="saved-build">
                 {/* <p>Click an Item to re-roll it!</p> */}
                 <div className="random-item-results">
                     {randomBuild}
