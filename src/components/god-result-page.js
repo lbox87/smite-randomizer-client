@@ -46,7 +46,7 @@ onClick = (event) => {
 render() {
     if (this.state.item1 === "") {
         return (
-            <div className=''>
+            <div className='without-items'>
             <h2 className="randomed-god-name">You Randomed <span className="god-name-result">{this.props.god}</span></h2>
             <img src={this.props.image} alt={this.props.god} className="god-image" />
             <div>
@@ -56,7 +56,7 @@ render() {
         )
       }
     return (
-        <div className=''>
+        <div className='with-items'>
             <h2 className="randomed-god-name">You Randomed <span className="god-name-result">{this.props.god}</span></h2>
             <img src={this.props.image} alt={this.props.god} className="god-image" />
             <div>
