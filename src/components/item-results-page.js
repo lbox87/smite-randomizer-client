@@ -49,12 +49,12 @@ export class ItemResultsPage extends React.Component {
       }
 render() {
     const randomBuild = [
-    <img src={this.props.image1} alt="item1" id="item-1"/>,
-    <img src={this.props.image2} alt="item2" id="item-2" />,
-    <img src={this.props.image3} alt="item3" id="item-3" />,
-    <img src={this.props.image4} alt="item4" id="item-4" />,
-    <img src={this.props.image5} alt="item5" id="item-5" />,
-    <img src={this.props.image6} alt="item6" id="item-6" /> 
+    <img key='item-1' src={this.props.image1} alt="item1" id="item-1"/>,
+    <img key='item-2' src={this.props.image2} alt="item2" id="item-2" />,
+    <img key='item-3' src={this.props.image3} alt="item3" id="item-3" />,
+    <img key='item-4' src={this.props.image4} alt="item4" id="item-4" />,
+    <img key='item-5' src={this.props.image5} alt="item5" id="item-5" />,
+    <img key='item-6' src={this.props.image6} alt="item6" id="item-6" /> 
     ]
     if (this.props.currentUser == null) {
      return (
