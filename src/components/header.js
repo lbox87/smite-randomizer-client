@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './header.css';
 
 export function Header(props) {
+    // header if user is logged in
     if (props.loggedIn) {
         return (
             <header className='container'>
@@ -19,6 +20,7 @@ export function Header(props) {
             </header>
         )
     }
+    // header if user is not logged in    
     return (
         <header className='container'>
             <div className="header-image">

@@ -13,7 +13,7 @@ export default function AboutApp() {
             </p>
             <p>
                 Sign in below or click "Register" at the top if you don't have an account. Click "Continue without log in" if you want to jump
-                right into randomzing.
+                right into randomizing.
             </p>
         </div>
     );

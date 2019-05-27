@@ -7,9 +7,11 @@ import { connect } from 'react-redux';
 import './landing-page.css';
 
 export function LandingPage(props) {
+    // go to user's builds if they are logged in
     if (props.loggedIn) {
         return <Redirect to="/mybuilds" />;
     }
+    // go to login screen if not logged in
     return (
         <div className='container'>
             <AboutApp />

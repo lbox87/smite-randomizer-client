@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-const {API_BASE_URL} = require('./config');
+import { Link } from 'react-router-dom';
+const { API_BASE_URL } = require('./config');
 // import './item-results-page.css';
 
 export class ItemResultsPage extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-          saved: ""
-      };
+        super(props);
+        this.state = {
+            saved: ""
+        };
     }
-
+    // save randomed build, plan to rewrite in redux to interact better with random god and item
     onClick = (event) => {
         event.preventDefault();
         let saveBuild = {
@@ -32,71 +32,68 @@ export class ItemResultsPage extends React.Component {
             image6: this.props.image6
         }
         console.log(JSON.stringify(saveBuild));
-          fetch(API_BASE_URL + 'save', {
-          method: "POST",
-          body: JSON.stringify(saveBuild),
-          headers: { "Content-Type": "application/json" },
+        fetch(API_BASE_URL + 'save', {
+            method: "POST",
+            body: JSON.stringify(saveBuild),
+            headers: { "Content-Type": "application/json" },
         })
-        .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        })
-        .then(response => {
-            console.log(response.message);
-            this.setState( {saved: response.message})
-          })
-      }
-render() {
-    const randomBuild = [
-    <img key='item-1' src={this.props.image1} alt="item1" id="item-1"/>,
-    <img key='item-2' src={this.props.image2} alt="item2" id="item-2" />,
-    <img key='item-3' src={this.props.image3} alt="item3" id="item-3" />,
-    <img key='item-4' src={this.props.image4} alt="item4" id="item-4" />,
-    <img key='item-5' src={this.props.image5} alt="item5" id="item-5" />,
-    <img key='item-6' src={this.props.image6} alt="item6" id="item-6" /> 
-    ]
-    if (this.props.currentUser == null) {
-     return (
-        <div className="not-logged-in">
-            {/* <p>Click an Item to re-roll it!</p> */}
-            <div className="random-item-results">
-                {randomBuild}
-                <p><Link to="/" className='link'>Sign in</Link>or<Link to="/registration" className='link'>Register</Link>to save builds.</p>
-            </div>
-        </div>
-        );
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then(response => {
+                console.log(response.message);
+                this.setState({ saved: response.message })
+            })
     }
-    else if (this.state.saved === "") {
-        return (
-           <div className="unsaved-build">
-                {/* <p>Click an Item to re-roll it!</p> */}
-                <div className="random-item-results">
-                    {randomBuild}
-                   <div>        
-                   <    button type="button" className="randomize-gear-button" onClick={this.onClick}>Save this Build!</button>
-                   </div>
-               </div>
-           </div>
-           );
-       }
-       else {
-        return (
-           <div classname="saved-build">
-                {/* <p>Click an Item to re-roll it!</p> */}
-                <div className="random-item-results">
-                    {randomBuild}
-                   <div>        
-                   <    button type="button" className="randomize-gear-button" onClick={this.onClick}>Save this Build!</button>
-                   <p>{this.state.saved}</p>
-                   </div>
-               </div>
-           </div>
-           );
-       }
+    render() {
+        const randomBuild = [
+            <img key='item-1' src={this.props.image1} alt="item1" id="item-1" />,
+            <img key='item-2' src={this.props.image2} alt="item2" id="item-2" />,
+            <img key='item-3' src={this.props.image3} alt="item3" id="item-3" />,
+            <img key='item-4' src={this.props.image4} alt="item4" id="item-4" />,
+            <img key='item-5' src={this.props.image5} alt="item5" id="item-5" />,
+            <img key='item-6' src={this.props.image6} alt="item6" id="item-6" />
+        ]
+        if (this.props.currentUser == null) {
+            return (
+                <div className="not-logged-in">
+                    <div className="random-item-results">
+                        {randomBuild}
+                        <p><Link to="/" className='link'>Sign in</Link>or<Link to="/registration" className='link'>Register</Link>to save builds.</p>
+                    </div>
+                </div>
+            );
+        }
+        else if (this.state.saved === "") {
+            return (
+                <div className="unsaved-build">
+                    <div className="random-item-results">
+                        {randomBuild}
+                        <div>
+                            <    button type="button" className="randomize-gear-button" onClick={this.onClick}>Save this Build!</button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div classname="saved-build">
+                    <div className="random-item-results">
+                        {randomBuild}
+                        <div>
+                            <    button type="button" className="randomize-gear-button" onClick={this.onClick}>Save this Build!</button>
+                            <p>{this.state.saved}</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     }
 }
 
-const mapStateToProps = state => ({currentUser: state.auth.currentUser});
+const mapStateToProps = state => ({ currentUser: state.auth.currentUser });
 
 export default connect(mapStateToProps)(ItemResultsPage)
