@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import {toggleEditImage,toggleEditGod,toggleEditId,toggleEditImage1,toggleEditImage2,toggleEditImage3,toggleEditImage4,toggleEditImage5,toggleEditImage6,toggleEditItem1,toggleEditItem2,toggleEditItem3,toggleEditItem4,toggleEditItem5,toggleEditItem6 } from '../actions/actions';
 // import './saved-builds-buttons.css';
 import requiresLogin from './requires-login';
-import { fetchProtectedDataEdit } from '../actions/protected-data';
 const { API_BASE_URL } = require('./config');
 
-export class SavedBuildsEdit extends React.Component {
+export class SavedBuildsEditButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,4 +64,4 @@ const mapStateToProps = state => (
         protectedData: state.protectedData.data
     });
 
-export default requiresLogin()(connect(mapStateToProps)(SavedBuildsEdit));
+export default requiresLogin()(connect(mapStateToProps)(SavedBuildsEditButton));

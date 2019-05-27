@@ -1,13 +1,10 @@
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
-import {toggleEditId } from '../actions/actions';
-import SavedBuildsDelete from './saved-builds-delete';
+import SavedBuildsDeleteButton from './saved-builds-delete-button';
 import SavedBuildsFrame from './saved-builds-frame';
-import SavedBuildsEdit from './saved-builds-edit';
-// import SavedBuildsEdit2 from './saved-builds-edit2';
+import SavedBuildsEditButton from './saved-builds-edit-button';
 import SavedBuildsEditPage from './saved-builds-edit-page';
-// import {toggleEdit} from '../actions/actions';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
 import './saved-builds-page.css';
@@ -26,55 +23,39 @@ export class SavedBuildsPage extends React.Component {
         this.renderToggleParent = this.renderToggleParent.bind(this);
         this.editParent = this.editParent.bind(this);
     }
+// callback to re-render once updates made to ProtectedData
     renderParent() {
-        // this.setState( {edit: !this.state.edit} )
         this.props.dispatch(fetchProtectedData())
     }
-
-        renderToggleParent() {
-        this.setState( {edit: !this.state.edit} )
-        this.props.dispatch(fetchProtectedData())
-    }
-
-    onClick = (event) => {
-        event.preventDefault();
-        this.setState( {edit: !this.state.edit})
-        // this.setState( {currentEdit: this.build.id} )
-    }
-
+// callback to flip this component into an edit state for the build selected. 
+// Plan to refactor this part in redux to better work with builds.
     editParent() {
-        this.setState( {edit: !this.state.edit} )
-        // this.props.dispatch(toggleEditId(""))
-        // this.props.dispatch(fetchProtectedData())
-        // this.setState( {currentEdit: "test"} )
+        this.setState({ edit: !this.state.edit })
     }
-
-    setBuildEdit = edit => () => {
-        // this.props.dispatch(toggleEdit(edit))
-        this.setState( {edit: true})
-      }
+// callback to re-render once edits are complete and turn edit state off
+    renderToggleParent() {
+        this.setState({ edit: !this.state.edit })
+        this.props.dispatch(fetchProtectedData())
+    }
 
     render() {
-        console.log(this.props.protectedData[0])
+        // display each build saved
         const myBuilds = this.props.protectedData.map((build, index) =>
             <li key={index}>
                 <div className="build">
                     <div className="full-build">
                         <SavedBuildsFrame id={build.id} god={build.god} image={build.image} image1={build.image1} image2={build.image2} image3={build.image3} image4={build.image4} image5={build.image5} image6={build.image6} />
-
                         <div className="buttons">
-                            <SavedBuildsDelete id={build.id} toggleClick={this.renderParent} />
+                            <SavedBuildsDeleteButton id={build.id} toggleClick={this.renderParent} />
                         </div>
                         <div className="buttons">
-                            <SavedBuildsEdit id={build.id}  toggleEdit={this.editParent} />
-                            {/* <SavedBuildsEdit id={build.id} toggleEdit={this.editParent}/> */}
-                            {/* <button onClick={this.setBuildEdit(build.id)} id={build.id}>Edit Build2</button> */}
+                            <SavedBuildsEditButton id={build.id} toggleEdit={this.editParent} />
                         </div>
                     </div>
                 </div>
             </li>
         );
-        console.log(myBuilds);
+        // no builds saved
         if (myBuilds.length === 0) {
             return (
                 <div className="dashboard-username">
@@ -82,11 +63,13 @@ export class SavedBuildsPage extends React.Component {
                 </div>
             )
         }
+        // edit mode on
         else if (this.state.edit === true) {
             return (
-                <SavedBuildsEditPage toggleEdit={this.editParent} renderParent={this.renderToggleParent}/>
+                <SavedBuildsEditPage toggleEdit={this.editParent} renderParent={this.renderToggleParent} />
             )
         }
+        // edit mode off
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -105,18 +88,9 @@ export class SavedBuildsPage extends React.Component {
         );
     }
 }
-
-// const mapStateToProps = state => {
-//     const {currentUser} = state.auth.currentUser;
-//     return {
-//         username: state.auth.currentUser.username,
-//         // name: `${currentUser.firstName} ${currentUser.lastName}`,
-//         protectedData: state.protectedData.data
-//     };
-// };
-
 const mapStateToProps = state => (
-    {   ...state.reducer,
+    {
+        ...state.reducer,
         currentUser: state.auth.currentUser,
         protectedData: state.protectedData.data
     });

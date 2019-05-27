@@ -1,14 +1,15 @@
 import React from 'react';
-import './saved-builds-delete.css';
+import './saved-builds-delete-button.css';
 const { API_BASE_URL } = require('./config');
 
-export default class SavedBuildsDelete extends React.Component {
+export default class SavedBuildsDeleteButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            placeholder: "update later"
         }
     }
-
+    // delete selected build and trigger callback to re-render parent
     onClickDelete = (event) => {
         event.preventDefault();
         let buildDelete = {
