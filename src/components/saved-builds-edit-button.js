@@ -19,7 +19,7 @@ export class SavedBuildsEditButton extends React.Component {
         let buildEdit = {
             build: this.props.id,
         }
-        fetch(API_BASE_URL + 'find/' + this.props.id, {
+        fetch(API_BASE_URL + 'builds/' + this.props.id, {
             method: "POST",
             body: JSON.stringify(buildEdit),
             headers: { "Content-Type": "application/json" },

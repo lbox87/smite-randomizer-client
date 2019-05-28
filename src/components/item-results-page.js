@@ -32,7 +32,7 @@ export class ItemResultsPage extends React.Component {
             image6: this.props.image6
         }
         console.log(JSON.stringify(saveBuild));
-        fetch(API_BASE_URL + 'save', {
+        fetch(API_BASE_URL + 'builds/save', {
             method: "POST",
             body: JSON.stringify(saveBuild),
             headers: { "Content-Type": "application/json" },
