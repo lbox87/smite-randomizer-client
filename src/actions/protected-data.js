@@ -17,7 +17,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const user = {user: getState().auth.currentUser.username};
     console.log(user);
-    return fetch(`${API_BASE_URL}protected`, {
+    return fetch(`${API_BASE_URL}builds/protected`, {
         method: 'POST',
         headers: {
             // Provide our auth token as credentials

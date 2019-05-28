@@ -15,7 +15,7 @@ export default class SavedBuildsDeleteButton extends React.Component {
         let buildDelete = {
             build: this.props.id,
         }
-        fetch(API_BASE_URL + 'delete/' + this.props.id, {
+        fetch(API_BASE_URL + 'builds/' + this.props.id, {
             method: "DELETE",
             body: JSON.stringify(buildDelete),
             headers: { "Content-Type": "application/json" },

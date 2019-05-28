@@ -129,7 +129,7 @@ export class SavedBuildsEditPage extends React.Component {
             image5: this.props.editImage5,
             image6: this.props.editImage6
         }
-        fetch(API_BASE_URL + 'edit/' + this.props.editId, {
+        fetch(API_BASE_URL + 'builds/' + this.props.editId, {
             method: "PUT",
             body: JSON.stringify(editBuild),
             headers: { "Content-Type": "application/json" },
