@@ -15,7 +15,7 @@ export default class GodResultPage extends React.Component {
             god: this.props.god,
             class: this.props.class
         }
-        fetch(API_BASE_URL + 'items2', {
+        fetch(API_BASE_URL + 'items/build', {
             method: "POST",
             body: JSON.stringify(godFilters),
             headers: { "Content-Type": "application/json" },

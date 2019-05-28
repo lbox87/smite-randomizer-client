@@ -16,7 +16,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll1 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
@@ -32,7 +32,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll2 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
@@ -48,7 +48,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll3 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
@@ -64,7 +64,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll4 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
@@ -80,7 +80,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll5 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
@@ -96,7 +96,7 @@ export class SavedBuildsEditPage extends React.Component {
     onClickReroll6 = (event) => {
         event.preventDefault();
         let god = { god: this.props.editGod }
-        fetch(API_BASE_URL + 'items1', {
+        fetch(API_BASE_URL + 'items/reroll', {
             method: "POST", body: JSON.stringify(god),headers: { "Content-Type": "application/json" },
         })
             .then(response => {
