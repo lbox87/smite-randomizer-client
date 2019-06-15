@@ -28,6 +28,9 @@
 <p>Here is an example using Postman: <div><img src="https://i.imgur.com/hxTBF0W.jpg" width="350"/></div></p>
 
 <h3>Requesting Items</h3>
+<p>To request a random full build (1 boot + 5 items) for a God, make a POST request to the endpoint https://vast-fjord-13474.herokuapp.com/items/build. The body of your post must contain a JSON object with the specific God class you would like a random build, with the exception of the God Ratatoskr in which case the object will indicate the specific God's name instead of his class (since he has a unique item only available to him).</p>
+
+<p>Here is an example using Postman: <div><img src="https://i.imgur.com/oIGu6ar.jpg" width="350"/></div> In this example the API will return a build specific to Ratatoskr, but if the submitted body had a different God name, or only indicated the class, then a build for that respective class would be returned instead.</p>
 
 
 <p>This app was built using Node and React.</p>
