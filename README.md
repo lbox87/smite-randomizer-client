@@ -12,10 +12,10 @@
 <div><img src="https://i.imgur.com/TGATctI.jpg" width="270"/></div>
 
 <h2>API Documentation for the SMITE God Randomizer API</h2> 
-<p>The API backing this app is used to login into profiles, access Gods, access Items, and access Saved Builds.</p>
+<p>The API backing this app is used to manage profiles, access Gods, access Items, and modify Saved Builds.</p>
 <p>The base url to send API requests is https://vast-fjord-13474.herokuapp.com/</p>
 <h3>Requesting Gods</h3>
-<p>To request a random God, make a POST request the endpoint https://vast-fjord-13474.herokuapp.com/random3. The body of your post contain the JSON object: 
+<p>To request a random God, make a POST request the endpoint https://vast-fjord-13474.herokuapp.com/random3. The body of your post must contain the JSON object: 
  <br></br>
 {"Assassin": true,
  "Guardian": true,
@@ -25,6 +25,7 @@
  <br></br>
  In this object you can toggle true or false for each God class in the game to include or exclude them from the randomization pool. At least one God class must remain true to return a god.
 </p>
+<p>Here is an example using Postman: <div><img src="https://i.imgur.com/hxTBF0W.jpg" width="270"/></div></p>
 <h3>Requesting Items</h3>
 
 
