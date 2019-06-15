@@ -1,4 +1,4 @@
-![screen](https://i.imgur.com/QoVFGOp.jpg =300)
+![screen](https://i.imgur.com/QoVFGOp.jpg =300x)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
