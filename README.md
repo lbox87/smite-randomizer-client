@@ -25,7 +25,8 @@
  <br></br>
  In this object you can toggle true or false for each God class in the game to include or exclude them from the randomization pool. At least one God class must remain true to return a god.
 </p>
-<p>Here is an example using Postman: <div><img src="https://i.imgur.com/hxTBF0W.jpg" width="270"/></div></p>
+<p>Here is an example using Postman: <div><img src="https://i.imgur.com/hxTBF0W.jpg" width="350"/></div></p>
+
 <h3>Requesting Items</h3>
 
 
