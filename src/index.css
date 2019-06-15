@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a0a53de;
-  color: #ffb31a;
+  color: #F7CA18;
   background-image: url("./images/lightning-305555_960_720.png");
   background-repeat:no-repeat;
   background-position-y: 150px;
@@ -19,7 +19,7 @@ body {
 }
 
 a {
-  color: #ffb31a;
+  color: #F7CA18;
 }
 
 a:hover {
