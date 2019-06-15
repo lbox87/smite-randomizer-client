@@ -1,5 +1,4 @@
-![screen](https://i.imgur.com/QoVFGOp.jpg =300x)
-<img src="https://i.imgur.com/QoVFGOp.jpg" alt="drawing" width="200"/>
+<img src="https://i.imgur.com/QoVFGOp.jpg" alt="drawing" width="270"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
