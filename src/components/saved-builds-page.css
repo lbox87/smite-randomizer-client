@@ -1,6 +1,6 @@
 .myBuilds {
     overflow: auto;
-    max-height: 380px;
+    max-height: 400px;
 }
 
 ul {
@@ -66,6 +66,6 @@ li {
 
 @media screen and (max-width: 640px) {
   .myBuilds {
-  max-height: 410px;  
+  max-height: 440px;  
   }
 }
