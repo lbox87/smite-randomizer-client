@@ -63,3 +63,9 @@ li {
 .build{
     flex-direction: row
 }
+
+@media screen and (max-width: 640px) {
+  .myBuilds {
+  max-height: 410px;  
+  }
+}
