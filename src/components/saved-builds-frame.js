@@ -16,18 +16,18 @@ export default class SavedBuildsFrame extends React.Component {
                 </div>
                 <div className="build-frame container">
                     <div className="group1">
-                        <img src={this.props.image} className="god-image-build" />
+                        <img src={this.props.image} className="god-image-build"  alt="god"/>
                     </div>
                     <div className="group2">
                         <div className="item-group1">
-                            <img src={this.props.image1} className="item" />
-                            <img src={this.props.image2} className="item" />
-                            <img src={this.props.image3} className="item" />
+                            <img src={this.props.image1} className="item"  alt="item1"/>
+                            <img src={this.props.image2} className="item"  alt="item2"/>
+                            <img src={this.props.image3} className="item"  alt="item3"/>
                         </div>
                         <div className="item-group2">
-                            <img src={this.props.image4} className="item" />
-                            <img src={this.props.image5} className="item" />
-                            <img src={this.props.image6} className="item" />
+                            <img src={this.props.image4} className="item"  alt="item4"/>
+                            <img src={this.props.image5} className="item"  alt="item5"/>
+                            <img src={this.props.image6} className="item"  alt="item6"/>
                         </div>
                     </div>
                 </div>

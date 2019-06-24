@@ -147,18 +147,18 @@ export class SavedBuildsEditPage extends React.Component {
                     </div>
                     <div className="build-frame container">
                         <div className="group1">
-                            <img src={this.props.editImage} className="god-image-build" />
+                            <img src={this.props.editImage} className="god-image-build" alt="god"/>
                         </div>
                         <div className="group2">
                             <div className="item-group1">
-                                <img src={this.props.editImage1} className="item" onClick={this.onClickReroll1}/>
-                                <img src={this.props.editImage2} className="item" onClick={this.onClickReroll2}/>
-                                <img src={this.props.editImage3} className="item" onClick={this.onClickReroll3}/>
+                                <img src={this.props.editImage1} className="item" onClick={this.onClickReroll1} alt="item1"/>
+                                <img src={this.props.editImage2} className="item" onClick={this.onClickReroll2} alt="item2"/>
+                                <img src={this.props.editImage3} className="item" onClick={this.onClickReroll3} alt="item3"/>
                             </div>
                             <div className="item-group2">
-                                <img src={this.props.editImage4} className="item" onClick={this.onClickReroll4}/>
-                                <img src={this.props.editImage5} className="item" onClick={this.onClickReroll5}/>
-                                <img src={this.props.editImage6} className="item" onClick={this.onClickReroll6}/>
+                                <img src={this.props.editImage4} className="item" onClick={this.onClickReroll4} alt="item4"/>
+                                <img src={this.props.editImage5} className="item" onClick={this.onClickReroll5} alt="item5"/>
+                                <img src={this.props.editImage6} className="item" onClick={this.onClickReroll6} alt="item6"/>
                             </div>
                         </div>
                     </div>
