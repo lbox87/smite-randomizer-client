@@ -80,7 +80,7 @@ export class ItemResultsPage extends React.Component {
         }
         else {
             return (
-                <div classname="saved-build">
+                <div className="saved-build">
                     <div className="random-item-results">
                         {randomBuild}
                         <div>
