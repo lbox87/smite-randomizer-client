@@ -13,6 +13,7 @@
 
 <h2>API Documentation for the SMITE God Randomizer API</h2> 
 <p>The following insturctions will show how to access random Gods and access random Item Builds.</p>
+<p>The API code can be viewed <a href="https://github.com/lbox87/smite-randomizer-api">here</a>.</p>
 <p>The base url to send API requests is https://vast-fjord-13474.herokuapp.com/</p>
 <h3>Requesting Gods</h3>
 <p>To request a random God, make a POST request the endpoint https://vast-fjord-13474.herokuapp.com/random3. The body of your post must contain the JSON object: 
